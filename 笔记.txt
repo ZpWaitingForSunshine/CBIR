@@ -1,0 +1,14 @@
+
+
+用于post上来，多个循环数组
+
+$FFabcd = '组合变量';
+$a = 'abcd';
+$b = 'FF';
+$ay = array('FF','abcd');
+echo ${'FF'.$a};
+echo ${'FF'.$ay[1]};
+echo ${$b.$a};
+------------------------------------------------------------------------------------
+
+主页面导航栏图标修改  ：D:\MYOA\webroot\general/index_simple.inc.php
