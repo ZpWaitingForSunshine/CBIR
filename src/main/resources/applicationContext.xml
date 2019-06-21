@@ -69,7 +69,7 @@
     <!-- mybatis文件配置，扫描所有mapper文件 -->
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean" p:dataSource-ref="dataSource"
           p:configLocation="classpath:mybatis-config.xml"
-          p:mapperLocations="classpath:com/njust/CBIR/web/dao/*.xml"/>
+          p:mapperLocations="classpath:com/njust/cbir/web/dao/*.xml"/>
 
     <!-- spring与mybatis整合配置，扫描所有dao -->
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer" p:basePackage="com.njust.cbir.web.dao"

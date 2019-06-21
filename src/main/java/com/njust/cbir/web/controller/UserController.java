@@ -4,7 +4,6 @@ import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
-import com.njust.cbir.web.service.ImageService;
 import net.sf.json.JSONObject;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -31,8 +30,6 @@ public class UserController {
     @Resource
     private UserService userService;
 
-    @Resource
-    private ImageService imageService;
 
 
     /**
