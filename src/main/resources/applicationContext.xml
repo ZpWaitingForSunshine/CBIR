@@ -21,7 +21,7 @@
     http://www.springframework.org/schema/util/spring-util.xsd">
 
     <!-- 自动扫描quick4j包 ,将带有注解的类 纳入spring容器管理 -->
-    <context:component-scan base-package="com.njust.rsCloud"></context:component-scan>
+    <context:component-scan base-package="com.njust.cbir"></context:component-scan>
 
     <!-- 引入配置文件 -->
     <bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
@@ -69,10 +69,10 @@
     <!-- mybatis文件配置，扫描所有mapper文件 -->
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean" p:dataSource-ref="dataSource"
           p:configLocation="classpath:mybatis-config.xml"
-          p:mapperLocations="classpath:com/njust/rsCloud/web/dao/*.xml"/>
+          p:mapperLocations="classpath:com/njust/CBIR/web/dao/*.xml"/>
 
     <!-- spring与mybatis整合配置，扫描所有dao -->
-    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer" p:basePackage="com.njust.rsCloud.web.dao"
+    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer" p:basePackage="com.njust.cbir.web.dao"
           p:sqlSessionFactoryBeanName="sqlSessionFactory"/>
 
     <!-- 对dataSource 数据源进行事务管理 -->
@@ -96,7 +96,7 @@
 
     <!-- 事务 aop 配置 -->
     <aop:config>
-        <aop:pointcut id="serviceMethods" expression="execution(* com.njust.rsCloud.web.service..*(..))"/>
+        <aop:pointcut id="serviceMethods" expression="execution(* com.njust.cbir.web.service..*(..))"/>
         <aop:advisor advice-ref="txAdvice" pointcut-ref="serviceMethods"/>
     </aop:config>
 

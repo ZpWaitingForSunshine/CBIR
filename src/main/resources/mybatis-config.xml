@@ -4,7 +4,7 @@
         "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
     <properties>
-        <property name="dialectClass" value="com.njust.rsCloud.core.feature.orm.dialect.MySql5Dialect"/>
+        <property name="dialectClass" value="com.njust.cbir.core.feature.orm.dialect.MySql5Dialect"/>
     </properties>
 
     <!-- 配置mybatis的缓存，延迟加载等等一系列属性 -->
@@ -57,13 +57,13 @@
     </settings>
 
     <typeAliases>
-        <package name="com.njust.rsCloud.web.model"/>
-        <package name="com.njust.rsCloud.web.enums"/>
+        <package name="com.njust.cbir.web.model"/>
+        <package name="com.njust.cbir.web.enums"/>
     </typeAliases>
 
     <plugins>
-        <plugin interceptor="com.njust.rsCloud.core.feature.orm.mybatis.PaginationResultSetHandlerInterceptor"/>
-        <plugin interceptor="com.njust.rsCloud.core.feature.orm.mybatis.PaginationStatementHandlerInterceptor"/>
+        <plugin interceptor="com.njust.cbir.core.feature.orm.mybatis.PaginationResultSetHandlerInterceptor"/>
+        <plugin interceptor="com.njust.cbir.core.feature.orm.mybatis.PaginationStatementHandlerInterceptor"/>
     </plugins>
 
 </configuration>
