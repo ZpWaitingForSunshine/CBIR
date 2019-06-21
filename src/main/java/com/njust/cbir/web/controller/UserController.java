@@ -4,6 +4,7 @@ import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
+import com.njust.cbir.core.entity.JSONResult;
 import net.sf.json.JSONObject;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -33,15 +34,16 @@ public class UserController {
 
 
     /**
-     * 用户登录获取token
+     * user get token
      *
-     * @param user
-     * @param result
      * @return
      */
     @RequestMapping(value = "/login", method = RequestMethod.POST, produces = "application/json;charset=UTF-8")
-    public String login(User user, BindingResult result, Model model, HttpServletRequest request) {
-        return "login";
+    public @ResponseBody
+    String login(@PathVariable("username") String username) {
+        Map<String, String> map = new HashMap<>();
+        map.put("Admin-Token","admin-vue");
+        return "{}";
     }
 
     /**
@@ -59,8 +61,6 @@ public class UserController {
         jResult.put("data",map);
         return jResult.toString();
     }
-
-
 
 
     @RequestMapping(value = "/index",method = RequestMethod.GET,produces = "application/json;charset=UTF-8")
