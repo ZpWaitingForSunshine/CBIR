@@ -1,16 +1,12 @@
 package com.njust.cbir.web.controller;
 
 import javax.annotation.Resource;
-import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import com.njust.cbir.core.entity.JSONResult;
 import net.sf.json.JSONObject;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
-import com.njust.cbir.web.model.User;
 import com.njust.cbir.web.service.UserService;
 
 import java.io.File;
@@ -31,8 +27,6 @@ public class UserController {
     @Resource
     private UserService userService;
 
-
-
     /**
      * user get token
      *
@@ -40,10 +34,10 @@ public class UserController {
      */
     @RequestMapping(value = "/login", method = RequestMethod.POST, produces = "application/json;charset=UTF-8")
     public @ResponseBody
-    String login(@PathVariable("username") String username) {
+    JSONResult login(@RequestParam("username") String username, @RequestParam("password") String password) {
         Map<String, String> map = new HashMap<>();
         map.put("Admin-Token","admin-vue");
-        return "{}";
+        return new JSONResult(map);
     }
 
     /**
