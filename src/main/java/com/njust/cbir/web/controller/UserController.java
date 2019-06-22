@@ -34,7 +34,8 @@ public class UserController {
      */
     @RequestMapping(value = "/login", method = RequestMethod.POST, produces = "application/json;charset=UTF-8")
     public @ResponseBody
-    JSONResult login(@RequestParam("username") String username, @RequestParam("password") String password) {
+//    JSONResult login(@RequestParam("username") String username, @RequestParam("password") String password) {
+    JSONResult login(@RequestBody Map<String,String> user) {
         Map<String, String> map = new HashMap<>();
         map.put("Admin-Token","admin-vue");
         return new JSONResult(map);
