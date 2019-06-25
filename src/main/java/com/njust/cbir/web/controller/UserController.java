@@ -4,6 +4,9 @@ import javax.annotation.Resource;
 import javax.servlet.http.HttpSession;
 
 import com.njust.cbir.core.entity.JSONResult;
+import com.njust.cbir.web.model.Token;
+import com.njust.cbir.web.model.User;
+import com.njust.cbir.web.service.TokenService;
 import net.sf.json.JSONObject;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -23,9 +26,11 @@ import java.util.*;
 @CrossOrigin
 public class UserController {
 
-
     @Resource
     private UserService userService;
+
+    @Resource
+    private TokenService tokenService;
 
     /**
      * user get token
@@ -34,12 +39,41 @@ public class UserController {
      */
     @RequestMapping(value = "/login", method = RequestMethod.POST, produces = "application/json;charset=UTF-8")
     public @ResponseBody
-//    JSONResult login(@RequestParam("username") String username, @RequestParam("password") String password) {
-    JSONResult login(@RequestBody Map<String,String> user) {
+    JSONResult login(@RequestBody Map<String,String> userinfo) {
+        String name = userinfo.get("username");
+        String password = userinfo.get("password");
+
+        System.out.println(name + " " + password);
+        // verity login
+        User user = userService.selectByUsername(name);
+
+        // insert token
+        String tokenSerial = "cbir" + name;
+        Token token = new Token();
+        token.setToken(tokenSerial);
+        token.setUid(Math.toIntExact(user.getId()));
+        int success = tokenService.insert(token);
+
         Map<String, String> map = new HashMap<>();
-        map.put("Admin-Token","admin-vue");
-        return new JSONResult(map);
+
+        map.put("token",tokenSerial);
+        return new JSONResult(map,200,true);
     }
+
+    /**
+     * 获取用户信息
+     *
+     * @return
+     */
+    @RequestMapping(value = "/info",method = RequestMethod.POST, produces = "application/json;charset=UTF-8")
+    public @ResponseBody
+    JSONResult getInfo(@RequestBody Map<String,String> token) {
+        // verify token and get the uid ,then get userinfo
+        // demo
+        User user = userService.selectByUsername("admin");
+        return new JSONResult(user,200,true);
+    }
+
 
     /**
      * 获取token
@@ -68,26 +102,6 @@ public class UserController {
         return jResult.toString();
     }
 
-    /**
-     * 获取用户信息
-     *
-     * @return
-     */
-    @RequestMapping(value = "/info",method = RequestMethod.GET,produces = "application/json;charset=UTF-8")
-    public @ResponseBody
-    String getInfo() {
-        JSONObject jResult = new JSONObject();
-        ArrayList<String> arrayList = new ArrayList<>();
-        arrayList.add("admin");
-        jResult.put("roles",arrayList);
-        jResult.put("name","admin");
-        jResult.put("avatar","https://wpimg.wallstcn.com/f778738c-e4f8-4870-b634-56703b4acafe.gif");
-        jResult.put("introduction","我也很着急啊");
-        JSONObject jResult2 = new JSONObject();
-        jResult2.put("data",jResult);
-        jResult2.put("code",200);
-        return jResult2.toString();
-    }
 
 
 

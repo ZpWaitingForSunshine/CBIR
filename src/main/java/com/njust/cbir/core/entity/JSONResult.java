@@ -64,4 +64,17 @@ public class JSONResult<T> extends Result {
         this.data = data;
         super.setSuccess(true);
     }
+
+    /**
+     * 成功返回数据
+     *
+     * @param data
+     * @param code
+     * @param success
+     */
+    public JSONResult(T data, int code, boolean success) {
+        this.data = data;
+        super.setStatusCode(code);
+        super.setSuccess(true);
+    }
 }

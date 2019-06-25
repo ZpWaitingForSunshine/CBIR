@@ -2,10 +2,12 @@ package com.njust.cbir.web.service.impl;
 
 import java.util.List;
 
+import com.njust.cbir.web.dao.UserMapper;
 import org.springframework.stereotype.Service;
 import com.njust.cbir.web.model.User;
-import com.njust.cbir.web.model.UserExample;
 import com.njust.cbir.web.service.UserService;
+
+import javax.annotation.Resource;
 
 /**
  * 用户Service实现类
@@ -15,6 +17,9 @@ import com.njust.cbir.web.service.UserService;
  */
 @Service
 public class UserServiceImpl  implements UserService {
+    @Resource
+    private UserMapper userMapper;
+
     @Override
     public User authentication(User user) {
         return null;
@@ -22,8 +27,9 @@ public class UserServiceImpl  implements UserService {
 
     @Override
     public User selectByUsername(String username) {
-        return null;
+        return userMapper.selectByName(username);
     }
+
 
     @Override
     public int insert(User user) {

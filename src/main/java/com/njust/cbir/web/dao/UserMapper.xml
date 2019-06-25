@@ -11,6 +11,7 @@
     <result column="avatar" property="avatar" jdbcType="VARCHAR" />
     <result column="introduction" property="introduction" jdbcType="VARCHAR" />
   </resultMap>
+
   <sql id="Example_Where_Clause" >
     <where >
       <foreach collection="oredCriteria" item="criteria" separator="or" >
@@ -102,6 +103,10 @@
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
+  <select id="selectByName" resultMap="BaseResultMap"  parameterType="com.njust.cbir.web.model.User">
+    select * from user where name = #{name, jdbcType=VARCHAR}
+  </select>
+  <!--<select id=""-->
   <insert id="insert" parameterType="com.njust.cbir.web.model.User" >
     insert into user (id, name, password, 
       state, create_time, roles, 
@@ -255,4 +260,5 @@
       introduction = #{introduction,jdbcType=VARCHAR}
     where id = #{id,jdbcType=BIGINT}
   </update>
+
 </mapper>
