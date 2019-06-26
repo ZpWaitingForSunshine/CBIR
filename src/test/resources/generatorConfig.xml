@@ -40,7 +40,7 @@
         </javaClientGenerator>
 
         <!--对应数据库表名 -->
-        <table tableName="token">
+        <table tableName="">
 
         </table>
 <!--        <table tableName="user">-->

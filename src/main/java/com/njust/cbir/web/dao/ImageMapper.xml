@@ -1,0 +1,467 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.njust.cbir.web.dao.ImageMapper" >
+  <resultMap id="BaseResultMap" type="com.njust.cbir.web.model.Image" >
+    <id column="ImageID" property="imageid" jdbcType="INTEGER" />
+    <result column="ImageName" property="imagename" jdbcType="VARCHAR" />
+    <result column="Interleave" property="interleave" jdbcType="SMALLINT" />
+    <result column="Rows" property="rows" jdbcType="SMALLINT" />
+    <result column="headeroffset" property="headeroffset" jdbcType="INTEGER" />
+    <result column="Samples" property="samples" jdbcType="SMALLINT" />
+    <result column="filetype" property="filetype" jdbcType="VARCHAR" />
+    <result column="DataType" property="datatype" jdbcType="TINYINT" />
+    <result column="Bands" property="bands" jdbcType="SMALLINT" />
+    <result column="ByteOrder" property="byteorder" jdbcType="TINYINT" />
+    <result column="WaveBegin" property="wavebegin" jdbcType="DOUBLE" />
+    <result column="WaveEnd" property="waveend" jdbcType="DOUBLE" />
+    <result column="ThumbnailURL" property="thumbnailurl" jdbcType="VARCHAR" />
+    <result column="URL" property="url" jdbcType="VARCHAR" />
+    <result column="bandnames" property="bandnames" jdbcType="VARCHAR" />
+    <result column="size" property="size" jdbcType="DOUBLE" />
+  </resultMap>
+  <resultMap id="ResultMapWithBLOBs" type="com.njust.cbir.web.model.Image" extends="BaseResultMap" >
+    <result column="wavelength" property="wavelength" jdbcType="LONGVARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    ImageID, ImageName, Interleave, Rows, headeroffset, Samples, filetype, DataType, 
+    Bands, ByteOrder, WaveBegin, WaveEnd, ThumbnailURL, URL, bandnames, size
+  </sql>
+  <sql id="Blob_Column_List" >
+    wavelength
+  </sql>
+  <select id="selectByExampleWithBLOBs" resultMap="ResultMapWithBLOBs" parameterType="com.njust.cbir.web.model.ImageExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from Image
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.njust.cbir.web.model.ImageExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from Image
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="ResultMapWithBLOBs" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from Image
+    where ImageID = #{imageid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from Image
+    where ImageID = #{imageid,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.njust.cbir.web.model.ImageExample" >
+    delete from Image
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.njust.cbir.web.model.Image" >
+    insert into Image (ImageID, ImageName, Interleave, 
+      Rows, headeroffset, Samples, 
+      filetype, DataType, Bands, 
+      ByteOrder, WaveBegin, WaveEnd, 
+      ThumbnailURL, URL, bandnames, 
+      size, wavelength)
+    values (#{imageid,jdbcType=INTEGER}, #{imagename,jdbcType=VARCHAR}, #{interleave,jdbcType=SMALLINT}, 
+      #{rows,jdbcType=SMALLINT}, #{headeroffset,jdbcType=INTEGER}, #{samples,jdbcType=SMALLINT}, 
+      #{filetype,jdbcType=VARCHAR}, #{datatype,jdbcType=TINYINT}, #{bands,jdbcType=SMALLINT}, 
+      #{byteorder,jdbcType=TINYINT}, #{wavebegin,jdbcType=DOUBLE}, #{waveend,jdbcType=DOUBLE}, 
+      #{thumbnailurl,jdbcType=VARCHAR}, #{url,jdbcType=VARCHAR}, #{bandnames,jdbcType=VARCHAR}, 
+      #{size,jdbcType=DOUBLE}, #{wavelength,jdbcType=LONGVARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.njust.cbir.web.model.Image" >
+    insert into Image
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="imageid != null" >
+        ImageID,
+      </if>
+      <if test="imagename != null" >
+        ImageName,
+      </if>
+      <if test="interleave != null" >
+        Interleave,
+      </if>
+      <if test="rows != null" >
+        Rows,
+      </if>
+      <if test="headeroffset != null" >
+        headeroffset,
+      </if>
+      <if test="samples != null" >
+        Samples,
+      </if>
+      <if test="filetype != null" >
+        filetype,
+      </if>
+      <if test="datatype != null" >
+        DataType,
+      </if>
+      <if test="bands != null" >
+        Bands,
+      </if>
+      <if test="byteorder != null" >
+        ByteOrder,
+      </if>
+      <if test="wavebegin != null" >
+        WaveBegin,
+      </if>
+      <if test="waveend != null" >
+        WaveEnd,
+      </if>
+      <if test="thumbnailurl != null" >
+        ThumbnailURL,
+      </if>
+      <if test="url != null" >
+        URL,
+      </if>
+      <if test="bandnames != null" >
+        bandnames,
+      </if>
+      <if test="size != null" >
+        size,
+      </if>
+      <if test="wavelength != null" >
+        wavelength,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="imageid != null" >
+        #{imageid,jdbcType=INTEGER},
+      </if>
+      <if test="imagename != null" >
+        #{imagename,jdbcType=VARCHAR},
+      </if>
+      <if test="interleave != null" >
+        #{interleave,jdbcType=SMALLINT},
+      </if>
+      <if test="rows != null" >
+        #{rows,jdbcType=SMALLINT},
+      </if>
+      <if test="headeroffset != null" >
+        #{headeroffset,jdbcType=INTEGER},
+      </if>
+      <if test="samples != null" >
+        #{samples,jdbcType=SMALLINT},
+      </if>
+      <if test="filetype != null" >
+        #{filetype,jdbcType=VARCHAR},
+      </if>
+      <if test="datatype != null" >
+        #{datatype,jdbcType=TINYINT},
+      </if>
+      <if test="bands != null" >
+        #{bands,jdbcType=SMALLINT},
+      </if>
+      <if test="byteorder != null" >
+        #{byteorder,jdbcType=TINYINT},
+      </if>
+      <if test="wavebegin != null" >
+        #{wavebegin,jdbcType=DOUBLE},
+      </if>
+      <if test="waveend != null" >
+        #{waveend,jdbcType=DOUBLE},
+      </if>
+      <if test="thumbnailurl != null" >
+        #{thumbnailurl,jdbcType=VARCHAR},
+      </if>
+      <if test="url != null" >
+        #{url,jdbcType=VARCHAR},
+      </if>
+      <if test="bandnames != null" >
+        #{bandnames,jdbcType=VARCHAR},
+      </if>
+      <if test="size != null" >
+        #{size,jdbcType=DOUBLE},
+      </if>
+      <if test="wavelength != null" >
+        #{wavelength,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.njust.cbir.web.model.ImageExample" resultType="java.lang.Integer" >
+    select count(*) from Image
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update Image
+    <set >
+      <if test="record.imageid != null" >
+        ImageID = #{record.imageid,jdbcType=INTEGER},
+      </if>
+      <if test="record.imagename != null" >
+        ImageName = #{record.imagename,jdbcType=VARCHAR},
+      </if>
+      <if test="record.interleave != null" >
+        Interleave = #{record.interleave,jdbcType=SMALLINT},
+      </if>
+      <if test="record.rows != null" >
+        Rows = #{record.rows,jdbcType=SMALLINT},
+      </if>
+      <if test="record.headeroffset != null" >
+        headeroffset = #{record.headeroffset,jdbcType=INTEGER},
+      </if>
+      <if test="record.samples != null" >
+        Samples = #{record.samples,jdbcType=SMALLINT},
+      </if>
+      <if test="record.filetype != null" >
+        filetype = #{record.filetype,jdbcType=VARCHAR},
+      </if>
+      <if test="record.datatype != null" >
+        DataType = #{record.datatype,jdbcType=TINYINT},
+      </if>
+      <if test="record.bands != null" >
+        Bands = #{record.bands,jdbcType=SMALLINT},
+      </if>
+      <if test="record.byteorder != null" >
+        ByteOrder = #{record.byteorder,jdbcType=TINYINT},
+      </if>
+      <if test="record.wavebegin != null" >
+        WaveBegin = #{record.wavebegin,jdbcType=DOUBLE},
+      </if>
+      <if test="record.waveend != null" >
+        WaveEnd = #{record.waveend,jdbcType=DOUBLE},
+      </if>
+      <if test="record.thumbnailurl != null" >
+        ThumbnailURL = #{record.thumbnailurl,jdbcType=VARCHAR},
+      </if>
+      <if test="record.url != null" >
+        URL = #{record.url,jdbcType=VARCHAR},
+      </if>
+      <if test="record.bandnames != null" >
+        bandnames = #{record.bandnames,jdbcType=VARCHAR},
+      </if>
+      <if test="record.size != null" >
+        size = #{record.size,jdbcType=DOUBLE},
+      </if>
+      <if test="record.wavelength != null" >
+        wavelength = #{record.wavelength,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExampleWithBLOBs" parameterType="map" >
+    update Image
+    set ImageID = #{record.imageid,jdbcType=INTEGER},
+      ImageName = #{record.imagename,jdbcType=VARCHAR},
+      Interleave = #{record.interleave,jdbcType=SMALLINT},
+      Rows = #{record.rows,jdbcType=SMALLINT},
+      headeroffset = #{record.headeroffset,jdbcType=INTEGER},
+      Samples = #{record.samples,jdbcType=SMALLINT},
+      filetype = #{record.filetype,jdbcType=VARCHAR},
+      DataType = #{record.datatype,jdbcType=TINYINT},
+      Bands = #{record.bands,jdbcType=SMALLINT},
+      ByteOrder = #{record.byteorder,jdbcType=TINYINT},
+      WaveBegin = #{record.wavebegin,jdbcType=DOUBLE},
+      WaveEnd = #{record.waveend,jdbcType=DOUBLE},
+      ThumbnailURL = #{record.thumbnailurl,jdbcType=VARCHAR},
+      URL = #{record.url,jdbcType=VARCHAR},
+      bandnames = #{record.bandnames,jdbcType=VARCHAR},
+      size = #{record.size,jdbcType=DOUBLE},
+      wavelength = #{record.wavelength,jdbcType=LONGVARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update Image
+    set ImageID = #{record.imageid,jdbcType=INTEGER},
+      ImageName = #{record.imagename,jdbcType=VARCHAR},
+      Interleave = #{record.interleave,jdbcType=SMALLINT},
+      Rows = #{record.rows,jdbcType=SMALLINT},
+      headeroffset = #{record.headeroffset,jdbcType=INTEGER},
+      Samples = #{record.samples,jdbcType=SMALLINT},
+      filetype = #{record.filetype,jdbcType=VARCHAR},
+      DataType = #{record.datatype,jdbcType=TINYINT},
+      Bands = #{record.bands,jdbcType=SMALLINT},
+      ByteOrder = #{record.byteorder,jdbcType=TINYINT},
+      WaveBegin = #{record.wavebegin,jdbcType=DOUBLE},
+      WaveEnd = #{record.waveend,jdbcType=DOUBLE},
+      ThumbnailURL = #{record.thumbnailurl,jdbcType=VARCHAR},
+      URL = #{record.url,jdbcType=VARCHAR},
+      bandnames = #{record.bandnames,jdbcType=VARCHAR},
+      size = #{record.size,jdbcType=DOUBLE}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.njust.cbir.web.model.Image" >
+    update Image
+    <set >
+      <if test="imagename != null" >
+        ImageName = #{imagename,jdbcType=VARCHAR},
+      </if>
+      <if test="interleave != null" >
+        Interleave = #{interleave,jdbcType=SMALLINT},
+      </if>
+      <if test="rows != null" >
+        Rows = #{rows,jdbcType=SMALLINT},
+      </if>
+      <if test="headeroffset != null" >
+        headeroffset = #{headeroffset,jdbcType=INTEGER},
+      </if>
+      <if test="samples != null" >
+        Samples = #{samples,jdbcType=SMALLINT},
+      </if>
+      <if test="filetype != null" >
+        filetype = #{filetype,jdbcType=VARCHAR},
+      </if>
+      <if test="datatype != null" >
+        DataType = #{datatype,jdbcType=TINYINT},
+      </if>
+      <if test="bands != null" >
+        Bands = #{bands,jdbcType=SMALLINT},
+      </if>
+      <if test="byteorder != null" >
+        ByteOrder = #{byteorder,jdbcType=TINYINT},
+      </if>
+      <if test="wavebegin != null" >
+        WaveBegin = #{wavebegin,jdbcType=DOUBLE},
+      </if>
+      <if test="waveend != null" >
+        WaveEnd = #{waveend,jdbcType=DOUBLE},
+      </if>
+      <if test="thumbnailurl != null" >
+        ThumbnailURL = #{thumbnailurl,jdbcType=VARCHAR},
+      </if>
+      <if test="url != null" >
+        URL = #{url,jdbcType=VARCHAR},
+      </if>
+      <if test="bandnames != null" >
+        bandnames = #{bandnames,jdbcType=VARCHAR},
+      </if>
+      <if test="size != null" >
+        size = #{size,jdbcType=DOUBLE},
+      </if>
+      <if test="wavelength != null" >
+        wavelength = #{wavelength,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where ImageID = #{imageid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.njust.cbir.web.model.Image" >
+    update Image
+    set ImageName = #{imagename,jdbcType=VARCHAR},
+      Interleave = #{interleave,jdbcType=SMALLINT},
+      Rows = #{rows,jdbcType=SMALLINT},
+      headeroffset = #{headeroffset,jdbcType=INTEGER},
+      Samples = #{samples,jdbcType=SMALLINT},
+      filetype = #{filetype,jdbcType=VARCHAR},
+      DataType = #{datatype,jdbcType=TINYINT},
+      Bands = #{bands,jdbcType=SMALLINT},
+      ByteOrder = #{byteorder,jdbcType=TINYINT},
+      WaveBegin = #{wavebegin,jdbcType=DOUBLE},
+      WaveEnd = #{waveend,jdbcType=DOUBLE},
+      ThumbnailURL = #{thumbnailurl,jdbcType=VARCHAR},
+      URL = #{url,jdbcType=VARCHAR},
+      bandnames = #{bandnames,jdbcType=VARCHAR},
+      size = #{size,jdbcType=DOUBLE},
+      wavelength = #{wavelength,jdbcType=LONGVARCHAR}
+    where ImageID = #{imageid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.njust.cbir.web.model.Image" >
+    update Image
+    set ImageName = #{imagename,jdbcType=VARCHAR},
+      Interleave = #{interleave,jdbcType=SMALLINT},
+      Rows = #{rows,jdbcType=SMALLINT},
+      headeroffset = #{headeroffset,jdbcType=INTEGER},
+      Samples = #{samples,jdbcType=SMALLINT},
+      filetype = #{filetype,jdbcType=VARCHAR},
+      DataType = #{datatype,jdbcType=TINYINT},
+      Bands = #{bands,jdbcType=SMALLINT},
+      ByteOrder = #{byteorder,jdbcType=TINYINT},
+      WaveBegin = #{wavebegin,jdbcType=DOUBLE},
+      WaveEnd = #{waveend,jdbcType=DOUBLE},
+      ThumbnailURL = #{thumbnailurl,jdbcType=VARCHAR},
+      URL = #{url,jdbcType=VARCHAR},
+      bandnames = #{bandnames,jdbcType=VARCHAR},
+      size = #{size,jdbcType=DOUBLE}
+    where ImageID = #{imageid,jdbcType=INTEGER}
+  </update>
+  <select id="selectTopN" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select * from image
+  </select>
+</mapper>
