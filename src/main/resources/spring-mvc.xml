@@ -26,36 +26,11 @@
         <!--<property name="validationMessageSource" ref="messageSource"/>-->
     </bean>
 
-    <!-- 国际化的消息资源文件（本系统中主要用于显示/错误消息定制） -->
-    <!--<bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">-->
-        <!--<property name="basenames">-->
-            <!--<list>-->
-                <!--&lt;!&ndash; 在web环境中一定要定位到classpath 否则默认到当前web应用下找 &ndash;&gt;-->
-                <!--<value>classpath:messages</value>-->
-                <!--<value>classpath:org/hibernate/validator/ValidationMessages</value>-->
-            <!--</list>-->
-        <!--</property>-->
-        <!--<property name="useCodeAsDefaultMessage" value="false"/>-->
-        <!--<property name="defaultEncoding" value="UTF-8"/>-->
-        <!--<property name="cacheSeconds" value="60"/>-->
-    <!--</bean>-->
+    <mvc:resources location="/app/js/" mapping="/js/**"/>
+    <mvc:resources location="/app/css" mapping="/css/**"/>
+    <mvc:resources location="/app/hdr" mapping="/hdr/**"/>
+    <mvc:resources location="/app/img" mapping="/img/**"/>
 
-    <!--<mvc:interceptors>-->
-        <!--<bean class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor"/>-->
-    <!--</mvc:interceptors>-->
-
-    <!--<bean id="localeResolver" class="org.springframework.web.servlet.i18n.CookieLocaleResolver">-->
-        <!--<property name="defaultLocale" value="zh_CN"/>-->
-    <!--</bean>-->
-
-    <!-- 支持返回json(避免IE在ajax请求时，返回json出现下载 ) -->
-<!--    <bean class="org.springframework.web.servlet.mvc.annotation.ResponseStatusExceptionResolver">-->
-<!--        <property name="messageConverters">-->
-<!--            <list>-->
-<!--                <ref bean="mappingJacksonHttpMessageConverter"/>-->
-<!--            </list>-->
-<!--        </property>-->
-<!--    </bean>-->
 
     <bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">
         <property name="messageConverters">
@@ -86,17 +61,5 @@
         <property name="maxUploadSize" value="10485760000"/>
         <property name="maxInMemorySize" value="40960"/>
     </bean>
-<!--    <bean id="mappingJackson2HttpMessageConverter"/>-->
-
-
-<!--    <mvc:cors>-->
-<!--        <mvc:mapping path="/**"/>-->
-<!--    </mvc:cors>-->
-
-    <!-- 启用shrio授权注解拦截方式 -->
-    <!--<aop:config proxy-target-class="true"></aop:config>-->
-    <!--<bean class="org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor">-->
-        <!--<property name="securityManager" ref="securityManager"/>-->
-    <!--</bean>-->
 
 </beans>

@@ -1,4 +1,4 @@
-<h1 align="center">quick4j</h1>
+<h1 align="center">CBIR</h1>
 
 
 **CBIR** 是一个通用JavaWeb项目骨架， 

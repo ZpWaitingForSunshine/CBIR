@@ -40,7 +40,7 @@
         </javaClientGenerator>
 
         <!--对应数据库表名 -->
-        <table tableName="">
+        <table tableName="Image">
 
         </table>
 <!--        <table tableName="user">-->

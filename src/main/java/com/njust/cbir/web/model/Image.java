@@ -1,25 +1,47 @@
 package com.njust.cbir.web.model;
 
 public class Image {
-    private Integer imageid;
+    private Integer id;
 
-    private String imagename;
+    private String filename;
 
-    private Short interleave;
+    private Short samples;
 
     private Short rows;
 
-    private Integer headeroffset;
+    private Short bands;
 
-    private Short samples;
+    private Integer headeroffset;
 
     private String filetype;
 
     private Byte datatype;
 
-    private Short bands;
+    private String interleave;
 
     private Byte byteorder;
+
+    private String bandnames;
+
+    private String wavelength;
+
+    private String timeofexposure;
+
+    private Integer imagebin;
+
+    private Integer autoexproix;
+
+    private Integer autoexproiy;
+
+    private Integer autoexproiwidth;
+
+    private Integer autoexproiheight;
+
+    private Double gain;
+
+    private Double exposurecoefficient;
+
+    private String lctftemperature;
 
     private Double wavebegin;
 
@@ -27,36 +49,32 @@ public class Image {
 
     private String thumbnailurl;
 
-    private String url;
-
-    private String bandnames;
+    private String hdfsurl;
 
     private Double size;
 
-    private String wavelength;
-
-    public Integer getImageid() {
-        return imageid;
+    public Integer getId() {
+        return id;
     }
 
-    public void setImageid(Integer imageid) {
-        this.imageid = imageid;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
-    public String getImagename() {
-        return imagename;
+    public String getFilename() {
+        return filename;
     }
 
-    public void setImagename(String imagename) {
-        this.imagename = imagename == null ? null : imagename.trim();
+    public void setFilename(String filename) {
+        this.filename = filename == null ? null : filename.trim();
     }
 
-    public Short getInterleave() {
-        return interleave;
+    public Short getSamples() {
+        return samples;
     }
 
-    public void setInterleave(Short interleave) {
-        this.interleave = interleave;
+    public void setSamples(Short samples) {
+        this.samples = samples;
     }
 
     public Short getRows() {
@@ -67,20 +85,20 @@ public class Image {
         this.rows = rows;
     }
 
+    public Short getBands() {
+        return bands;
+    }
+
+    public void setBands(Short bands) {
+        this.bands = bands;
+    }
+
     public Integer getHeaderoffset() {
         return headeroffset;
     }
 
     public void setHeaderoffset(Integer headeroffset) {
         this.headeroffset = headeroffset;
-    }
-
-    public Short getSamples() {
-        return samples;
-    }
-
-    public void setSamples(Short samples) {
-        this.samples = samples;
     }
 
     public String getFiletype() {
@@ -99,12 +117,12 @@ public class Image {
         this.datatype = datatype;
     }
 
-    public Short getBands() {
-        return bands;
+    public String getInterleave() {
+        return interleave;
     }
 
-    public void setBands(Short bands) {
-        this.bands = bands;
+    public void setInterleave(String interleave) {
+        this.interleave = interleave == null ? null : interleave.trim();
     }
 
     public Byte getByteorder() {
@@ -113,6 +131,94 @@ public class Image {
 
     public void setByteorder(Byte byteorder) {
         this.byteorder = byteorder;
+    }
+
+    public String getBandnames() {
+        return bandnames;
+    }
+
+    public void setBandnames(String bandnames) {
+        this.bandnames = bandnames == null ? null : bandnames.trim();
+    }
+
+    public String getWavelength() {
+        return wavelength;
+    }
+
+    public void setWavelength(String wavelength) {
+        this.wavelength = wavelength == null ? null : wavelength.trim();
+    }
+
+    public String getTimeofexposure() {
+        return timeofexposure;
+    }
+
+    public void setTimeofexposure(String timeofexposure) {
+        this.timeofexposure = timeofexposure == null ? null : timeofexposure.trim();
+    }
+
+    public Integer getImagebin() {
+        return imagebin;
+    }
+
+    public void setImagebin(Integer imagebin) {
+        this.imagebin = imagebin;
+    }
+
+    public Integer getAutoexproix() {
+        return autoexproix;
+    }
+
+    public void setAutoexproix(Integer autoexproix) {
+        this.autoexproix = autoexproix;
+    }
+
+    public Integer getAutoexproiy() {
+        return autoexproiy;
+    }
+
+    public void setAutoexproiy(Integer autoexproiy) {
+        this.autoexproiy = autoexproiy;
+    }
+
+    public Integer getAutoexproiwidth() {
+        return autoexproiwidth;
+    }
+
+    public void setAutoexproiwidth(Integer autoexproiwidth) {
+        this.autoexproiwidth = autoexproiwidth;
+    }
+
+    public Integer getAutoexproiheight() {
+        return autoexproiheight;
+    }
+
+    public void setAutoexproiheight(Integer autoexproiheight) {
+        this.autoexproiheight = autoexproiheight;
+    }
+
+    public Double getGain() {
+        return gain;
+    }
+
+    public void setGain(Double gain) {
+        this.gain = gain;
+    }
+
+    public Double getExposurecoefficient() {
+        return exposurecoefficient;
+    }
+
+    public void setExposurecoefficient(Double exposurecoefficient) {
+        this.exposurecoefficient = exposurecoefficient;
+    }
+
+    public String getLctftemperature() {
+        return lctftemperature;
+    }
+
+    public void setLctftemperature(String lctftemperature) {
+        this.lctftemperature = lctftemperature == null ? null : lctftemperature.trim();
     }
 
     public Double getWavebegin() {
@@ -139,20 +245,12 @@ public class Image {
         this.thumbnailurl = thumbnailurl == null ? null : thumbnailurl.trim();
     }
 
-    public String getUrl() {
-        return url;
+    public String getHdfsurl() {
+        return hdfsurl;
     }
 
-    public void setUrl(String url) {
-        this.url = url == null ? null : url.trim();
-    }
-
-    public String getBandnames() {
-        return bandnames;
-    }
-
-    public void setBandnames(String bandnames) {
-        this.bandnames = bandnames == null ? null : bandnames.trim();
+    public void setHdfsurl(String hdfsurl) {
+        this.hdfsurl = hdfsurl == null ? null : hdfsurl.trim();
     }
 
     public Double getSize() {
@@ -161,13 +259,5 @@ public class Image {
 
     public void setSize(Double size) {
         this.size = size;
-    }
-
-    public String getWavelength() {
-        return wavelength;
-    }
-
-    public void setWavelength(String wavelength) {
-        this.wavelength = wavelength == null ? null : wavelength.trim();
     }
 }
