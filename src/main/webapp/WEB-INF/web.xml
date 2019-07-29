@@ -64,8 +64,11 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>dispatcher</servlet-name>
+        <url-pattern>*.jpg</url-pattern><!--匹配所有以jpg结尾的请求-->
+        <url-pattern>*.txt</url-pattern><!--匹配所有以txt结尾的请求-->
         <!-- 拦截所有/rest/* 的请求,交给DispatcherServlet处理,性能最好 -->
         <url-pattern>/rest/*</url-pattern>
+
     </servlet-mapping>
 
     <!-- 首页 -->

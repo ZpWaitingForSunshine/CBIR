@@ -91,7 +91,7 @@
     ID, filename, samples, rows, bands, headeroffset, filetype, DataType, Interleave,
     byteOrder, bandnames, wavelength, timeofexposure, imageBin, autoexproix, autoexproiy,
     autoexproiwidth, autoexproiheight, gain, exposurecoefficient, LCTFTemperature, WaveBegin,
-    WaveEnd, ThumbnailURL, HDFSURL, size
+    WaveEnd, ThumbnailURL, HDFSID, size
   </sql>
   <select id="selectByExample" parameterType="com.njust.cbir.web.model.ImageExample" resultMap="BaseResultMap">
     select
@@ -132,7 +132,7 @@
       autoexproiy, autoexproiwidth, autoexproiheight,
       gain, exposurecoefficient, LCTFTemperature,
       WaveBegin, WaveEnd, ThumbnailURL,
-      HDFSURL, size)
+      HDFSID, size)
     values (#{id,jdbcType=INTEGER}, #{filename,jdbcType=VARCHAR}, #{samples,jdbcType=SMALLINT},
       #{rows,jdbcType=SMALLINT}, #{bands,jdbcType=SMALLINT}, #{headeroffset,jdbcType=INTEGER},
       #{filetype,jdbcType=VARCHAR}, #{datatype,jdbcType=TINYINT}, #{interleave,jdbcType=VARCHAR},
@@ -141,7 +141,7 @@
       #{autoexproiy,jdbcType=INTEGER}, #{autoexproiwidth,jdbcType=INTEGER}, #{autoexproiheight,jdbcType=INTEGER},
       #{gain,jdbcType=DOUBLE}, #{exposurecoefficient,jdbcType=DOUBLE}, #{lctftemperature,jdbcType=VARCHAR},
       #{wavebegin,jdbcType=DOUBLE}, #{waveend,jdbcType=DOUBLE}, #{thumbnailurl,jdbcType=VARCHAR},
-      #{hdfsurl,jdbcType=VARCHAR}, #{size,jdbcType=DOUBLE})
+      #{hdfsid,jdbcType=INTEGER}, #{size,jdbcType=DOUBLE})
   </insert>
   <insert id="insertSelective" parameterType="com.njust.cbir.web.model.Image">
     insert into Image
@@ -218,8 +218,8 @@
       <if test="thumbnailurl != null">
         ThumbnailURL,
       </if>
-      <if test="hdfsurl != null">
-        HDFSURL,
+      <if test="hdfsid != null">
+        HDFSID,
       </if>
       <if test="size != null">
         size,
@@ -298,8 +298,8 @@
       <if test="thumbnailurl != null">
         #{thumbnailurl,jdbcType=VARCHAR},
       </if>
-      <if test="hdfsurl != null">
-        #{hdfsurl,jdbcType=VARCHAR},
+      <if test="hdfsid != null">
+        #{hdfsid,jdbcType=VARCHAR},
       </if>
       <if test="size != null">
         #{size,jdbcType=DOUBLE},
@@ -387,8 +387,8 @@
       <if test="record.thumbnailurl != null">
         ThumbnailURL = #{record.thumbnailurl,jdbcType=VARCHAR},
       </if>
-      <if test="record.hdfsurl != null">
-        HDFSURL = #{record.hdfsurl,jdbcType=VARCHAR},
+      <if test="record.hdfsid != null">
+        HDFSID = #{record.hdfsid,jdbcType=VARCHAR},
       </if>
       <if test="record.size != null">
         size = #{record.size,jdbcType=DOUBLE},
@@ -424,7 +424,7 @@
       WaveBegin = #{record.wavebegin,jdbcType=DOUBLE},
       WaveEnd = #{record.waveend,jdbcType=DOUBLE},
       ThumbnailURL = #{record.thumbnailurl,jdbcType=VARCHAR},
-      HDFSURL = #{record.hdfsurl,jdbcType=VARCHAR},
+      HDFSID = #{record.hdfsid,jdbcType=INTEGER},
       size = #{record.size,jdbcType=DOUBLE}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
@@ -502,8 +502,8 @@
       <if test="thumbnailurl != null">
         ThumbnailURL = #{thumbnailurl,jdbcType=VARCHAR},
       </if>
-      <if test="hdfsurl != null">
-        HDFSURL = #{hdfsurl,jdbcType=VARCHAR},
+      <if test="hdfsid != null">
+        HDFSID = #{hdfsid,jdbcType=VARCHAR},
       </if>
       <if test="size != null">
         size = #{size,jdbcType=DOUBLE},
@@ -536,7 +536,7 @@
       WaveBegin = #{wavebegin,jdbcType=DOUBLE},
       WaveEnd = #{waveend,jdbcType=DOUBLE},
       ThumbnailURL = #{thumbnailurl,jdbcType=VARCHAR},
-      HDFSURL = #{hdfsurl,jdbcType=VARCHAR},
+      HDFSID = #{hdfsid,jdbcType=VARCHAR},
       size = #{size,jdbcType=DOUBLE}
     where ID = #{id,jdbcType=INTEGER}
   </update>
@@ -578,7 +578,7 @@
     autoexproiy, autoexproiwidth, autoexproiheight,
     gain, exposurecoefficient, LCTFTemperature,
     WaveBegin, WaveEnd, ThumbnailURL,
-    HDFSURL, size)
+    HDFSID, size)
     values (#{filename,jdbcType=VARCHAR}, #{samples,jdbcType=SMALLINT},
     #{rows,jdbcType=SMALLINT}, #{bands,jdbcType=SMALLINT}, #{headeroffset,jdbcType=INTEGER},
     #{filetype,jdbcType=VARCHAR}, #{datatype,jdbcType=TINYINT}, #{interleave,jdbcType=VARCHAR},
@@ -587,7 +587,7 @@
     #{autoexproiy,jdbcType=INTEGER}, #{autoexproiwidth,jdbcType=INTEGER}, #{autoexproiheight,jdbcType=INTEGER},
     #{gain,jdbcType=DOUBLE}, #{exposurecoefficient,jdbcType=DOUBLE}, #{lctftemperature,jdbcType=VARCHAR},
     #{wavebegin,jdbcType=DOUBLE}, #{waveend,jdbcType=DOUBLE}, #{thumbnailurl,jdbcType=VARCHAR},
-    #{hdfsurl,jdbcType=VARCHAR}, #{size,jdbcType=DOUBLE})
+    #{hdfsid,jdbcType=INTEGER}, #{size,jdbcType=DOUBLE})
 
   </insert>
 </mapper>

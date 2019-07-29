@@ -49,7 +49,7 @@ public class Image {
 
     private String thumbnailurl;
 
-    private String hdfsurl;
+    private int hdfsid;
 
     private Double size;
 
@@ -245,13 +245,10 @@ public class Image {
         this.thumbnailurl = thumbnailurl == null ? null : thumbnailurl.trim();
     }
 
-    public String getHdfsurl() {
-        return hdfsurl;
+    public int getHdfsid() {
+        return hdfsid;
     }
 
-    public void setHdfsurl(String hdfsurl) {
-        this.hdfsurl = hdfsurl == null ? null : hdfsurl.trim();
-    }
 
     public Double getSize() {
         return size;

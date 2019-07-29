@@ -15,6 +15,8 @@
     <!-- 扫描controller（controller层注入） -->
     <context:component-scan base-package="com.njust.cbir.web.controller"/>
 
+    <context:property-placeholder location="classpath:*.properties" />
+
     <!-- 会自动注册DefaultAnnotationHandlerMapping与AnnotationMethodHandlerAdapter 两个bean,是spring MVC为@Controllers分发请求所必须的 -->
     <!-- 指定自己定义的validator -->
     <mvc:annotation-driven validator="validator"/>
@@ -27,9 +29,9 @@
     </bean>
 
     <mvc:resources location="/app/js/" mapping="/js/**"/>
-    <mvc:resources location="/app/css" mapping="/css/**"/>
-    <mvc:resources location="/app/hdr" mapping="/hdr/**"/>
-    <mvc:resources location="/app/img" mapping="/img/**"/>
+    <mvc:resources location="/app/css/" mapping="/css/**"/>
+    <mvc:resources location="/app/hdr/" mapping="/hdr/**"/>
+    <mvc:resources location="/app/img/" mapping="/img/**"/>
 
 
     <bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">
@@ -59,7 +61,7 @@
     <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
         <property name="defaultEncoding" value="utf-8"/>
         <property name="maxUploadSize" value="10485760000"/>
-        <property name="maxInMemorySize" value="40960"/>
+        <property name="maxInMemorySize" value="40960000"/>
     </bean>
 
 </beans>

@@ -3,7 +3,9 @@ package com.njust.cbir.web.controller;
 import javax.annotation.Resource;
 
 import com.njust.cbir.core.entity.JSONResult;
-import com.njust.cbir.core.util.upload.HDRUpload;
+import com.njust.cbir.core.util.upload.HDFSOperation;
+import com.njust.cbir.core.util.upload.HDROperation;
+import com.njust.cbir.core.util.upload.ImageOperation;
 import com.njust.cbir.web.model.Image;
 import com.njust.cbir.web.service.ImageService;
 import org.springframework.stereotype.Controller;
@@ -57,7 +59,7 @@ public class ImageController {
         String filename = file.getOriginalFilename(); // get original
         String timestamp = String.valueOf(System.currentTimeMillis());
         String path =  "/home/hadoop/Documents/Files/";
-        Image image = HDRUpload.getImageMeta(file.getInputStream());
+        Image image = HDROperation.getImageMeta(file.getInputStream());
         // add filename
         image.setFilename(filename);
         imageService.insertTemp(image);
@@ -74,13 +76,41 @@ public class ImageController {
     }
 
     /**
-     * upload hdr file
+     * upload original file
      * @param request
      * @param file
      */
     @RequestMapping("imgupload")
     public @ResponseBody
     JSONResult imgUpload(MultipartHttpServletRequest request, @RequestParam("file") MultipartFile file) throws IOException {
+        int id = Integer.parseInt(request.getParameter("id")); // id
+        int bands = Integer.parseInt(request.getParameter("bands")); // bands
+        String interleave = request.getHeader("interleave"); // bsq bip bil
+        int datatype = HDROperation.datatype2Bit(Integer.parseInt(request.getParameter("datatype"))); // datatype
+        ImageOperation imageOperation = new ImageOperation();
+        long fileSize = file.getSize();
+        long blockSize = imageOperation.getBlockSize(bands, datatype, fileSize);
+        int blockNumber = imageOperation.getBlockNumber(blockSize, fileSize);
+
+//        imageOperation.upload2HDFS(file.getInputStream(),blockSize,id,bands);
+        HDFSOperation hdfsOperation = new HDFSOperation();
+        hdfsOperation.upload(file.getInputStream(), id, blockSize, bands);
+        // image's hdfs url
+        String url = hdfsOperation.getHdfspath() + hdfsOperation.getHyperspectralPath() + "/" + id;
+
+        System.out.println("blocknumber " + blockNumber);
+        System.out.println("blockSize " + blockSize);
+
+
+
+
+
+
+//        int blockNumber =
+
+
+
+
 
         // change the
         // save in hdfs

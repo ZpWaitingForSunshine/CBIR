@@ -4,13 +4,17 @@ import com.njust.cbir.web.model.Image;
 import org.springframework.beans.factory.annotation.Value;
 
 import java.io.*;
-import java.util.Map;
 
 
-public class HDRUpload {
+public class HDROperation {
     @Value("${hdfs.path}")
     private String hdfspath;
 
+    /**
+     * get hdr metadata
+     * @param inputStream
+     * @return
+     */
     public static Image getImageMeta(InputStream inputStream){
         Image image = new Image();
         BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
@@ -133,8 +137,23 @@ public class HDRUpload {
         return image;
     }
 
-    public static String uploadImg(){
 
+    public static Integer datatype2Bit(int datatype){
+        switch (datatype) {
+            case 1:
+                return 1;
+            case 2:
+                return 2;
+            case 3:
+                return 4;
+            case 4:
+                return 4;
+            case 5:
+                return 8;
+            case 12:
+                return 8;
+        }
         return null;
+
     }
 }
