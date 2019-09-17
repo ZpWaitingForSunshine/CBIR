@@ -31,4 +31,6 @@ public interface ImageMapper {
     List<Image> selectTopN(int n);
 
     int insertTemp(Image record);
+
+    int updateHDFSInfo(@Param("IID") int IID, @Param("HID")int HID);
 }

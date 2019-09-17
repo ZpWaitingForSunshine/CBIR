@@ -73,7 +73,21 @@ public class HDROperation {
                     }
 
                     if(strleft.equals("wavelength")){
-                        image.setWavelength(strright);
+
+                        if(strleft.contains("}"))
+                            image.setWavelength(strright);
+                        else{
+                            String wavelent=strright, temp;
+                            while((temp = reader.readLine())!=null){
+                                wavelent += temp;
+                                if(temp.contains("}")){
+                                    break;
+                                }
+                            }
+                            wavelent.replaceAll("\r","");
+                            wavelent.replaceAll("\n","");
+                            image.setWavelength(wavelent);
+                        }
                         continue;
                     }
 

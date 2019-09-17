@@ -6,8 +6,11 @@ import com.njust.cbir.core.entity.JSONResult;
 import com.njust.cbir.core.util.upload.HDFSOperation;
 import com.njust.cbir.core.util.upload.HDROperation;
 import com.njust.cbir.core.util.upload.ImageOperation;
+import com.njust.cbir.web.model.Hdfsinfo;
 import com.njust.cbir.web.model.Image;
+import com.njust.cbir.web.service.HDFSInfoService;
 import com.njust.cbir.web.service.ImageService;
+import net.sf.json.JSONObject;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
@@ -31,6 +34,9 @@ public class ImageController {
 
     @Resource
     private ImageService imageService;
+
+    @Resource
+    private HDFSInfoService hdfsInfoService;
 
     /**
      * get top N images
@@ -85,7 +91,10 @@ public class ImageController {
     JSONResult imgUpload(MultipartHttpServletRequest request, @RequestParam("file") MultipartFile file) throws IOException {
         int id = Integer.parseInt(request.getParameter("id")); // id
         int bands = Integer.parseInt(request.getParameter("bands")); // bands
-        String interleave = request.getHeader("interleave"); // bsq bip bil
+        int samples = Integer.parseInt(request.getParameter("samples")); // samples
+        int rows = Integer.parseInt(request.getParameter("rows")); // samples
+        String interleave = request.getParameter("interleave"); // bsq bip bil
+        int dataType = Integer.parseInt(request.getParameter("datatype"));
         int datatype = HDROperation.datatype2Bit(Integer.parseInt(request.getParameter("datatype"))); // datatype
         ImageOperation imageOperation = new ImageOperation();
         long fileSize = file.getSize();
@@ -98,52 +107,67 @@ public class ImageController {
         // image's hdfs url
         String url = hdfsOperation.getHdfspath() + hdfsOperation.getHyperspectralPath() + "/" + id;
 
+        Hdfsinfo hdfsinfo = new Hdfsinfo();
+        hdfsinfo.setBlocknumber(blockNumber);
+        hdfsinfo.setBlocksize(blockSize);
+        hdfsinfo.setUrl(url);
+        hdfsinfo.setTime("" + System.currentTimeMillis() / 1000);
+
+        hdfsInfoService.insert(hdfsinfo);
+        int HID = hdfsinfo.getId();
+        imageService.updateForeignKey(id, HID);
+
+        Image image = new Image();
+        image.setId(id);
+        image.setHdfsid(HID);
+        image.setBands((short) bands);
+        image.setRows((short) rows);
+        image.setSamples((short) samples);
+        image.setInterleave(interleave);
+        image.setDatatype((byte) dataType);
+
+        // generate image thumbnail
+        String thumbnailUrl = imageOperation.generateThumbnail(file.getInputStream(),image,request);
+        image.setThumbnailurl(thumbnailUrl);
+
+        // update image information
+        imageService.updateByPrimaryKeySelective(image);
+
+
+        JSONObject jsonObject = new JSONObject();
+        jsonObject.put("hdfsurl", url);
+        jsonObject.put("thumbnailurl", thumbnailUrl);
+        jsonObject.put("hdfsid",HID);
+
         System.out.println("blocknumber " + blockNumber);
         System.out.println("blockSize " + blockSize);
 
 
-
-
-
-
-//        int blockNumber =
-
-
-
-
-
-        // change the
         // save in hdfs
         //
-        return new JSONResult("dd",200,true);
+        return new JSONResult(jsonObject,200,true);
     }
 
 
 
-//    /**
-//     *
-//     * @param n
-//     * @return
-//     */
-//    @RequestMapping(value = "/getPage",method = RequestMethod.POST,produces = "application/json;charset=UTF-8")
-//    public @ResponseBody
-//    JSONResult getPage(@RequestParam(name = "n", required = true) Integer n) {
-//        System.out.println(n);
-//        List<Image> list = imageService.getTopN(n);
-//        JSONObject jResult = new JSONObject();
-//        Map<String, String> map = new HashMap<>();
-//        map.put("Admin-Token","admin-vue");
-//        jResult.put("data",map);
-//        return new JSONResult(list,200,true);
-//    }
+    @RequestMapping(value = "/imgupdate",method = RequestMethod.POST,produces = "application/json;charset=UTF-8")
+    public @ResponseBody
+    JSONResult imgUpdate(@ModelAttribute("image") Image image){
+        imageService.updateByPrimaryKeySelective(image);
+        System.out.println("hello world");
+        return new JSONResult("ddd",200,true);
+    }
 
-
-
-
-
-
-
-
-
-
+    /**
+     *
+     * @param
+     * @return
+     */
+    @RequestMapping(value = "/getimage",method = RequestMethod.POST,produces = "application/json;charset=UTF-8")
+    public @ResponseBody
+    JSONResult getImage(@RequestParam("id") Integer id){
+//        int id =Integer.parseInt(params.get("id"));
+        Image image = imageService.selectBykey(id);
+        return new JSONResult(image,200,true);
+    }
 }

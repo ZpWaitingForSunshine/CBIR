@@ -49,6 +49,10 @@ public class Image {
 
     private String thumbnailurl;
 
+    public void setHdfsid(int hdfsid) {
+        this.hdfsid = hdfsid;
+    }
+
     private int hdfsid;
 
     private Double size;

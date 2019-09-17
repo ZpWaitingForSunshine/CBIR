@@ -590,4 +590,12 @@
     #{hdfsid,jdbcType=INTEGER}, #{size,jdbcType=DOUBLE})
 
   </insert>
+
+  <insert id="updateHDFSInfo" parameterType="INTEGER" useGeneratedKeys="true" keyColumn="id" keyProperty="id">
+    update Image
+    <set>
+      HDFSID = #{HID}
+    </set>
+    where id = #{IID}
+  </insert>
 </mapper>

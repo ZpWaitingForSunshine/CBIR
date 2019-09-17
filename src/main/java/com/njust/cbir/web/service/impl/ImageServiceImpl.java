@@ -53,4 +53,16 @@ public class ImageServiceImpl implements ImageService {
     public int insertTemp(Image image){
         return imageMapper.insertTemp(image);
     }
+
+    public int updateForeignKey(int IID, int HID){
+        return imageMapper.updateHDFSInfo(IID, HID);
+    }
+
+    public int updateByPrimaryKeySelective(Image image){
+        return  imageMapper.updateByPrimaryKeySelective(image);
+    }
+
+    public Image selectBykey(Integer id){
+        return imageMapper.selectByPrimaryKey(id);
+    }
 }

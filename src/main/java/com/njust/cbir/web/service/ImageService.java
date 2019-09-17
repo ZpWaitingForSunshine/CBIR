@@ -17,6 +17,9 @@ public interface ImageService extends GenericService<Image, Long> {
 
     int insertTemp(Image image);
     int insert(Image image);
+    int updateForeignKey(int IID, int HID);
+    int updateByPrimaryKeySelective(Image image);
+    Image selectBykey(Integer id);
 }
 
 
