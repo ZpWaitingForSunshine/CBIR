@@ -4,9 +4,9 @@
   <resultMap id="BaseResultMap" type="com.njust.cbir.web.model.Image">
     <id column="ID" jdbcType="INTEGER" property="id" />
     <result column="filename" jdbcType="VARCHAR" property="filename" />
-    <result column="samples" jdbcType="SMALLINT" property="samples" />
-    <result column="rows" jdbcType="SMALLINT" property="rows" />
-    <result column="bands" jdbcType="SMALLINT" property="bands" />
+    <result column="samples" jdbcType="INTEGER" property="samples" />
+    <result column="rows" jdbcType="INTEGER" property="rows" />
+    <result column="bands" jdbcType="INTEGER" property="bands" />
     <result column="headeroffset" jdbcType="INTEGER" property="headeroffset" />
     <result column="filetype" jdbcType="VARCHAR" property="filetype" />
     <result column="DataType" jdbcType="TINYINT" property="datatype" />
@@ -133,8 +133,8 @@
       gain, exposurecoefficient, LCTFTemperature,
       WaveBegin, WaveEnd, ThumbnailURL,
       HDFSID, size)
-    values (#{id,jdbcType=INTEGER}, #{filename,jdbcType=VARCHAR}, #{samples,jdbcType=SMALLINT},
-      #{rows,jdbcType=SMALLINT}, #{bands,jdbcType=SMALLINT}, #{headeroffset,jdbcType=INTEGER},
+    values (#{id,jdbcType=INTEGER}, #{filename,jdbcType=VARCHAR}, #{samples,jdbcType=INTEGER},
+      #{rows,jdbcType=INTEGER}, #{bands,jdbcType=INTEGER}, #{headeroffset,jdbcType=INTEGER},
       #{filetype,jdbcType=VARCHAR}, #{datatype,jdbcType=TINYINT}, #{interleave,jdbcType=VARCHAR},
       #{byteorder,jdbcType=TINYINT}, #{bandnames,jdbcType=VARCHAR}, #{wavelength,jdbcType=VARCHAR},
       #{timeofexposure,jdbcType=VARCHAR}, #{imagebin,jdbcType=INTEGER}, #{autoexproix,jdbcType=INTEGER},
@@ -233,13 +233,13 @@
         #{filename,jdbcType=VARCHAR},
       </if>
       <if test="samples != null">
-        #{samples,jdbcType=SMALLINT},
+        #{samples,jdbcType=INTEGER},
       </if>
       <if test="rows != null">
-        #{rows,jdbcType=SMALLINT},
+        #{rows,jdbcType=INTEGER},
       </if>
       <if test="bands != null">
-        #{bands,jdbcType=SMALLINT},
+        #{bands,jdbcType=INTEGER},
       </if>
       <if test="headeroffset != null">
         #{headeroffset,jdbcType=INTEGER},
@@ -322,13 +322,13 @@
         filename = #{record.filename,jdbcType=VARCHAR},
       </if>
       <if test="record.samples != null">
-        samples = #{record.samples,jdbcType=SMALLINT},
+        samples = #{record.samples,jdbcType=INTEGER},
       </if>
       <if test="record.rows != null">
-        rows = #{record.rows,jdbcType=SMALLINT},
+        rows = #{record.rows,jdbcType=INTEGER},
       </if>
       <if test="record.bands != null">
-        bands = #{record.bands,jdbcType=SMALLINT},
+        bands = #{record.bands,jdbcType=INTEGER},
       </if>
       <if test="record.headeroffset != null">
         headeroffset = #{record.headeroffset,jdbcType=INTEGER},
@@ -402,9 +402,9 @@
     update Image
     set ID = #{record.id,jdbcType=INTEGER},
       filename = #{record.filename,jdbcType=VARCHAR},
-      samples = #{record.samples,jdbcType=SMALLINT},
-      rows = #{record.rows,jdbcType=SMALLINT},
-      bands = #{record.bands,jdbcType=SMALLINT},
+      samples = #{record.samples,jdbcType=INTEGER},
+      rows = #{record.rows,jdbcType=INTEGER},
+      bands = #{record.bands,jdbcType=INTEGER},
       headeroffset = #{record.headeroffset,jdbcType=INTEGER},
       filetype = #{record.filetype,jdbcType=VARCHAR},
       DataType = #{record.datatype,jdbcType=TINYINT},
@@ -437,13 +437,13 @@
         filename = #{filename,jdbcType=VARCHAR},
       </if>
       <if test="samples != null">
-        samples = #{samples,jdbcType=SMALLINT},
+        samples = #{samples,jdbcType=INTEGER},
       </if>
       <if test="rows != null">
-        rows = #{rows,jdbcType=SMALLINT},
+        rows = #{rows,jdbcType=INTEGER},
       </if>
       <if test="bands != null">
-        bands = #{bands,jdbcType=SMALLINT},
+        bands = #{bands,jdbcType=INTEGER},
       </if>
       <if test="headeroffset != null">
         headeroffset = #{headeroffset,jdbcType=INTEGER},
@@ -514,9 +514,9 @@
   <update id="updateByPrimaryKey" parameterType="com.njust.cbir.web.model.Image">
     update Image
     set filename = #{filename,jdbcType=VARCHAR},
-      samples = #{samples,jdbcType=SMALLINT},
-      rows = #{rows,jdbcType=SMALLINT},
-      bands = #{bands,jdbcType=SMALLINT},
+      samples = #{samples,jdbcType=INTEGER},
+      rows = #{rows,jdbcType=INTEGER},
+      bands = #{bands,jdbcType=INTEGER},
       headeroffset = #{headeroffset,jdbcType=INTEGER},
       filetype = #{filetype,jdbcType=VARCHAR},
       DataType = #{datatype,jdbcType=TINYINT},
@@ -557,8 +557,8 @@
 <!--      gain, exposurecoefficient, LCTFTemperature,-->
 <!--      WaveBegin, WaveEnd, ThumbnailURL,-->
 <!--      HDFSURL, size)-->
-<!--    values (#{filename,jdbcType=VARCHAR}, #{samples,jdbcType=SMALLINT},-->
-<!--      #{rows,jdbcType=SMALLINT}, #{bands,jdbcType=SMALLINT}, #{headeroffset,jdbcType=INTEGER},-->
+<!--    values (#{filename,jdbcType=VARCHAR}, #{samples,jdbcType=INTEGER},-->
+<!--      #{rows,jdbcType=INTEGER}, #{bands,jdbcType=INTEGER}, #{headeroffset,jdbcType=INTEGER},-->
 <!--      #{filetype,jdbcType=VARCHAR}, #{datatype,jdbcType=TINYINT}, #{interleave,jdbcType=VARCHAR},-->
 <!--      #{byteorder,jdbcType=TINYINT}, #{bandnames,jdbcType=VARCHAR}, #{wavelength,jdbcType=VARCHAR},-->
 <!--      #{timeofexposure,jdbcType=VARCHAR}, #{imagebin,jdbcType=INTEGER}, #{autoexproix,jdbcType=INTEGER},-->
@@ -579,8 +579,8 @@
     gain, exposurecoefficient, LCTFTemperature,
     WaveBegin, WaveEnd, ThumbnailURL,
     HDFSID, size)
-    values (#{filename,jdbcType=VARCHAR}, #{samples,jdbcType=SMALLINT},
-    #{rows,jdbcType=SMALLINT}, #{bands,jdbcType=SMALLINT}, #{headeroffset,jdbcType=INTEGER},
+    values (#{filename,jdbcType=VARCHAR}, #{samples,jdbcType=INTEGER},
+    #{rows,jdbcType=INTEGER}, #{bands,jdbcType=INTEGER}, #{headeroffset,jdbcType=INTEGER},
     #{filetype,jdbcType=VARCHAR}, #{datatype,jdbcType=TINYINT}, #{interleave,jdbcType=VARCHAR},
     #{byteorder,jdbcType=TINYINT}, #{bandnames,jdbcType=VARCHAR}, #{wavelength,jdbcType=VARCHAR},
     #{timeofexposure,jdbcType=VARCHAR}, #{imagebin,jdbcType=INTEGER}, #{autoexproix,jdbcType=INTEGER},

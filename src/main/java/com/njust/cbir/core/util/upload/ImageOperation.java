@@ -94,7 +94,7 @@ public class ImageOperation {
 
         double gap = max - min;
         int HEIGHT = WIDTH * rows / samples;
-        BufferedImage bi = new BufferedImage(rows, samples, BufferedImage.TYPE_INT_RGB);
+        BufferedImage bi = new BufferedImage( samples,rows, BufferedImage.TYPE_INT_RGB);
         Graphics g = bi.getGraphics();
         for (int i = 0; i < pixels; i++) {
             data[i] = (int) ((data[i] - min) / (float) gap * 255);
@@ -123,9 +123,11 @@ public class ImageOperation {
      * @return
      */
     public long getBlockSize(int bands, int datatype, long fileSize){
-
-        int NumberOfPixels = (int) Math.floor(fileSize / bands / datatype / sparkCores / partitions );
-        return NumberOfPixels * bands * datatype;
+        // if blocksize > 128mb
+        int blocksize = (int) Math.floor(fileSize / bands / datatype / sparkCores / partitions ) * bands * datatype;
+        if(blocksize > 128 *1024 *1024 * 8)
+            blocksize = (int) Math.floor(128 * 1024 * 1024 / bands / datatype) * bands * datatype;
+        return blocksize;
     }
 
     /**

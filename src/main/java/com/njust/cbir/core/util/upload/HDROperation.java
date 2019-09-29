@@ -29,16 +29,16 @@ public class HDROperation {
                     strright = strline.substring(pos+1,strline.length()).trim();
 
                     if(strleft.equals("samples")){
-                        image.setSamples((short) Integer.parseInt(strright));
+                        image.setSamples(Integer.parseInt(strright));
                         continue;
                     }
                     if(strleft.equals("lines")){
-                        image.setRows((short) Integer.parseInt(strright));
+                        image.setRows(Integer.parseInt(strright));
                         continue;
                     }
 
                     if(strleft.equals("bands")){
-                        image.setBands((short) Integer.parseInt(strright));
+                        image.setBands( Integer.parseInt(strright));
                         continue;
                     }
 

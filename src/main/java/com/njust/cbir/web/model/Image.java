@@ -5,11 +5,11 @@ public class Image {
 
     private String filename;
 
-    private Short samples;
+    private int samples;
 
-    private Short rows;
+    private int rows;
 
-    private Short bands;
+    private int bands;
 
     private Integer headeroffset;
 
@@ -73,27 +73,27 @@ public class Image {
         this.filename = filename == null ? null : filename.trim();
     }
 
-    public Short getSamples() {
+    public int getSamples() {
         return samples;
     }
 
-    public void setSamples(Short samples) {
+    public void setSamples(int samples) {
         this.samples = samples;
     }
 
-    public Short getRows() {
+    public int getRows() {
         return rows;
     }
 
-    public void setRows(Short rows) {
+    public void setRows(int rows) {
         this.rows = rows;
     }
 
-    public Short getBands() {
+    public int getBands() {
         return bands;
     }
 
-    public void setBands(Short bands) {
+    public void setBands(int bands) {
         this.bands = bands;
     }
 
