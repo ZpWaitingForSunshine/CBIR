@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.njust.hsicloud.web.dao.ComponentsMapper" >
+  <resultMap id="BaseResultMap" type="com.njust.hsicloud.web.model.Components" >
+    <id column="cid" property="cid" jdbcType="INTEGER" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
+    <result column="summary" property="summary" jdbcType="VARCHAR" />
+    <result column="input" property="input" jdbcType="VARCHAR" />
+    <result column="output" property="output" jdbcType="VARCHAR" />
+    <result column="detail" property="detail" jdbcType="VARCHAR" />
+    <result column="xmllink" property="xmllink" jdbcType="VARCHAR" />
+  </resultMap>
+  <resultMap id="State" type="com.njust.hsicloud.web.model.StateModel" >
+    <id column="cid" property="cid" jdbcType="INTEGER" />
+    <result column="value" property="value" jdbcType="VARCHAR" />
+  </resultMap>
+  <resultMap id="conponentname" type="com.njust.hsicloud.web.model.DagConponent" >
+    <id column="name" property="name" jdbcType="VARCHAR" />
+    <id column="dag_json" property="dag_json" jdbcType="VARCHAR" />
+  </resultMap>
+  <select id="getAllComponents" resultMap="BaseResultMap">
+    select * from components
+
+  </select>
+  <select id="getAllComponentsName" resultMap="conponentname">
+    select * from list_name
+  </select>
+  <select id="getAllComponentsInfo" resultMap="conponentname">
+    select * from
+    list_name
+    where name=${ccname}
+
+  </select>
+  <select id="getAllState" resultMap="State">
+    select * from checked
+
+  </select>
+  <select id="getValue" resultType="java.lang.String">
+    select ${coloum} from excutive
+    where id=#{id,jdbcType=INTEGER}
+  </select>
+  <select id="getFlag1" resultType="java.lang.String" parameterType="java.lang.String">
+    select value
+    from checked
+    where cid= ${cid}
+  </select>
+  <update id="changeFlag1" parameterType="java.lang.String">
+    update checked
+    set value =0
+    where cid=${cid}
+  </update>
+  <update id="changeFlag2" parameterType="java.lang.String">
+    update checked
+    set value =1
+    where cid=${cid}
+  </update>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    cid, name, summary, input, output,detail,xmllink
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.njust.hsicloud.web.model.ComponentsExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from components
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from components
+    where cid = #{cid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from components
+    where cid = #{cid,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.njust.hsicloud.web.model.ComponentsExample" >
+    delete from components
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.njust.hsicloud.web.model.Components" >
+    insert into components (cid, name, summary, 
+      input, output)
+    values (#{cid,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{summary,jdbcType=VARCHAR}, 
+      #{input,jdbcType=VARCHAR}, #{output,jdbcType=VARCHAR})
+  </insert>
+  <insert id="saveDagInfo" parameterType="com.njust.hsicloud.web.model.Components" >
+    insert into list_name (name, dag_json)
+    values (#{ccname,jdbcType=VARCHAR}, #{dag_json,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertsql" parameterType="java.lang.String" useGeneratedKeys="true" keyProperty="id" >
+    insert into excutive (dag_link, result)
+    values (#{value1,jdbcType=VARCHAR}, #{value2,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.njust.hsicloud.web.model.Components" >
+    insert into components
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="cid != null" >
+        cid,
+      </if>
+      <if test="name != null" >
+        name,
+      </if>
+      <if test="summary != null" >
+        summary,
+      </if>
+      <if test="input != null" >
+        input,
+      </if>
+      <if test="output != null" >
+        output,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="cid != null" >
+        #{cid,jdbcType=INTEGER},
+      </if>
+      <if test="name != null" >
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="summary != null" >
+        #{summary,jdbcType=VARCHAR},
+      </if>
+      <if test="input != null" >
+        #{input,jdbcType=VARCHAR},
+      </if>
+      <if test="output != null" >
+        #{output,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.njust.hsicloud.web.model.ComponentsExample" resultType="java.lang.Integer" >
+    select count(*) from components
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update components
+    <set >
+      <if test="record.cid != null" >
+        cid = #{record.cid,jdbcType=INTEGER},
+      </if>
+      <if test="record.name != null" >
+        name = #{record.name,jdbcType=VARCHAR},
+      </if>
+      <if test="record.summary != null" >
+        summary = #{record.summary,jdbcType=VARCHAR},
+      </if>
+      <if test="record.input != null" >
+        input = #{record.input,jdbcType=VARCHAR},
+      </if>
+      <if test="record.output != null" >
+        output = #{record.output,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update components
+    set cid = #{record.cid,jdbcType=INTEGER},
+      name = #{record.name,jdbcType=VARCHAR},
+      summary = #{record.summary,jdbcType=VARCHAR},
+      input = #{record.input,jdbcType=VARCHAR},
+      output = #{record.output,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.njust.hsicloud.web.model.Components" >
+    update components
+    <set >
+      <if test="name != null" >
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="summary != null" >
+        summary = #{summary,jdbcType=VARCHAR},
+      </if>
+      <if test="input != null" >
+        input = #{input,jdbcType=VARCHAR},
+      </if>
+      <if test="output != null" >
+        output = #{output,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where cid = #{cid,jdbcType=INTEGER}
+  </update>
+  <update id="updatexcutive" parameterType="com.njust.hsicloud.web.model.Components" >
+    update excutive
+    set ${coloum} = #{value,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.njust.hsicloud.web.model.Components" >
+    update components
+    set name = #{name,jdbcType=VARCHAR},
+      summary = #{summary,jdbcType=VARCHAR},
+      input = #{input,jdbcType=VARCHAR},
+      output = #{output,jdbcType=VARCHAR}
+    where cid = #{cid,jdbcType=INTEGER}
+  </update>
+</mapper>

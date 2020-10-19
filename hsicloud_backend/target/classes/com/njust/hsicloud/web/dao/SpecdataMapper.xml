@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.njust.hsicloud.web.dao.SpecdataMapper" >
+  <resultMap id="BaseResultMap" type="com.njust.hsicloud.web.model.Specdata" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="specname" property="specname" jdbcType="VARCHAR" />
+    <result column="speclibid" property="speclibid" jdbcType="INTEGER" />
+  </resultMap>
+  <resultMap id="ResultMapWithBLOBs" type="com.njust.hsicloud.web.model.SpecdataWithBLOBs" extends="BaseResultMap" >
+    <result column="wavelength" property="wavelength" jdbcType="LONGVARCHAR" />
+    <result column="relectivity" property="relectivity" jdbcType="LONGVARCHAR" />
+  </resultMap>
+  <resultMap id="ResultMapAbundanceAndSpecdata" type="com.njust.hsicloud.web.pojo.ImageSpectral" extends="ResultMapWithBLOBs" >
+    <result column="imageid" property="imageid" jdbcType="INTEGER" />
+    <result column="specid" property="specid" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    id, specname, speclibid
+  </sql>
+  <sql id="Blob_Column_List" >
+    wavelength, relectivity
+  </sql>
+  <select id="selectByExampleWithBLOBs" resultMap="ResultMapWithBLOBs" parameterType="com.njust.hsicloud.web.model.SpecdataExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from specdata
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.njust.hsicloud.web.model.SpecdataExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from specdata
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="ResultMapWithBLOBs" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from specdata
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from specdata
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.njust.hsicloud.web.model.SpecdataExample" >
+    delete from specdata
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.njust.hsicloud.web.model.SpecdataWithBLOBs" >
+    insert into specdata (id, specname, speclibid, 
+      wavelength, relectivity)
+    values (#{id,jdbcType=INTEGER}, #{specname,jdbcType=VARCHAR}, #{speclibid,jdbcType=INTEGER}, 
+      #{wavelength,jdbcType=LONGVARCHAR}, #{relectivity,jdbcType=LONGVARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.njust.hsicloud.web.model.SpecdataWithBLOBs" >
+    insert into specdata
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="specname != null" >
+        specname,
+      </if>
+      <if test="speclibid != null" >
+        speclibid,
+      </if>
+      <if test="wavelength != null" >
+        wavelength,
+      </if>
+      <if test="relectivity != null" >
+        relectivity,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="specname != null" >
+        #{specname,jdbcType=VARCHAR},
+      </if>
+      <if test="speclibid != null" >
+        #{speclibid,jdbcType=INTEGER},
+      </if>
+      <if test="wavelength != null" >
+        #{wavelength,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="relectivity != null" >
+        #{relectivity,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.njust.hsicloud.web.model.SpecdataExample" resultType="java.lang.Integer" >
+    select count(*) from specdata
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update specdata
+    <set >
+      <if test="record.id != null" >
+        id = #{record.id,jdbcType=INTEGER},
+      </if>
+      <if test="record.specname != null" >
+        specname = #{record.specname,jdbcType=VARCHAR},
+      </if>
+      <if test="record.speclibid != null" >
+        speclibid = #{record.speclibid,jdbcType=INTEGER},
+      </if>
+      <if test="record.wavelength != null" >
+        wavelength = #{record.wavelength,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="record.relectivity != null" >
+        relectivity = #{record.relectivity,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExampleWithBLOBs" parameterType="map" >
+    update specdata
+    set id = #{record.id,jdbcType=INTEGER},
+      specname = #{record.specname,jdbcType=VARCHAR},
+      speclibid = #{record.speclibid,jdbcType=INTEGER},
+      wavelength = #{record.wavelength,jdbcType=LONGVARCHAR},
+      relectivity = #{record.relectivity,jdbcType=LONGVARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update specdata
+    set id = #{record.id,jdbcType=INTEGER},
+      specname = #{record.specname,jdbcType=VARCHAR},
+      speclibid = #{record.speclibid,jdbcType=INTEGER}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.njust.hsicloud.web.model.SpecdataWithBLOBs" >
+    update specdata
+    <set >
+      <if test="specname != null" >
+        specname = #{specname,jdbcType=VARCHAR},
+      </if>
+      <if test="speclibid != null" >
+        speclibid = #{speclibid,jdbcType=INTEGER},
+      </if>
+      <if test="wavelength != null" >
+        wavelength = #{wavelength,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="relectivity != null" >
+        relectivity = #{relectivity,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.njust.hsicloud.web.model.SpecdataWithBLOBs" >
+    update specdata
+    set specname = #{specname,jdbcType=VARCHAR},
+      speclibid = #{speclibid,jdbcType=INTEGER},
+      wavelength = #{wavelength,jdbcType=LONGVARCHAR},
+      relectivity = #{relectivity,jdbcType=LONGVARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.njust.hsicloud.web.model.Specdata" >
+    update specdata
+    set specname = #{specname,jdbcType=VARCHAR},
+      speclibid = #{speclibid,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+
+  <select id="retievalSpectralInformation" resultMap="ResultMapAbundanceAndSpecdata">
+    SELECT * FROM abundance, specdata where abundance.imageid = #{id} and abundance.specid = specdata.id;
+  </select>
+</mapper>

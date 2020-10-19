@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<DAG>
+  <dagname>DAG1</dagname>
+  <VMnum>4</VMnum>
+  <ImageID>0</ImageID>
+  <object>maxprofit</object>
+  <nodes>
+    <node>
+      <id>100</id>
+      <name>PCA</name>
+      <url>/home/hadoop/data/PSOMain10_jar/src/XmlFile/PCA.xml</url>
+      <flag>true</flag>
+      <predecessor></predecessor>
+      <successor>101,103</successor>
+    </node>
+    <node>
+      <id>101</id>
+      <name>PPI</name>
+      <url>/home/hadoop/data/PSOMain10_jar/src/XmlFile/PPI.xml</url>
+      <flag>true</flag>
+      <predecessor>100</predecessor>
+      <successor>102</successor>
+    </node>
+    <node>
+      <id>102</id>
+      <name>SAD</name>
+      <url>/home/hadoop/data/PSOMain10_jar/src/XmlFile/SAD.xml</url>
+      <flag>true</flag>
+      <predecessor>101</predecessor>
+      <successor>104</successor>
+    </node>
+    <node>
+      <id>103</id>
+      <name>KMeans</name>
+      <url>/home/hadoop/data/PSOMain10_jar/src/XmlFile/KMeans.xml</url>
+      <flag>true</flag>
+      <predecessor>100</predecessor>
+      <successor></successor>
+    </node>
+    <node>
+      <id>104</id>
+      <name>PPI</name>
+      <url>/home/hadoop/data/PSOMain10_jar/src/XmlFile/PPI.xml</url>
+      <flag>true</flag>
+      <predecessor>102</predecessor>
+      <successor></successor>
+    </node>
+  </nodes>
+</DAG>

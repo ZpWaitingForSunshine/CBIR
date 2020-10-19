@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<algorithm>
+<name>PCA</name>
+<id>1</id>
+<flag>true</flag>
+<description>Dimensionality reduction</description>
+<input>
+<parameter>
+<description>hyperpectral data</description>
+<type>Array</type>
+<name>matrix</name>
+</parameter>
+<target_dimension>
+<type>int</type>
+<x_axis>X</x_axis>
+<y_axis>Y</y_axis>
+<z_axis>Z</z_axis>
+</target_dimension>
+</input>
+<output>
+<return_value>
+<description>dimensional hyperspectral data</description>
+<type>Array</type>
+<name>matrix</name>
+</return_value>
+</output>
+<RDMT_description>
+   <parallel_processing>
+   <parallelism>1</parallelism>
+   <duration>6060</duration>
+   <unit>ms</unit>
+   </parallel_processing>
+<parallel_processing>
+<parallelism>2</parallelism>
+<duration>3469</duration>
+<unit>ms</unit>
+</parallel_processing>
+<parallel_processing>
+<parallelism>4</parallelism>
+<duration>2531</duration>
+<unit>ms</unit>
+</parallel_processing>
+<parallel_processing>
+<parallelism>8</parallelism>
+<duration>2529</duration>
+<unit>ms</unit>
+</parallel_processing>
+
+</RDMT_description>
+</algorithm>

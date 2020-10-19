@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<algorithm>
+  <name>Load</name>
+  <id>2</id>
+  <flag>flase</flag>
+  <description>open the file</description>
+  <input>
+    <parameter>
+      <name>file path</name>
+      <type>string</type>
+      <value>str</value>
+    </parameter>
+  </input>
+  <output>
+    <return_value>
+      <name>hyperpectral data</name>
+      <type>Array</type>
+      <value>matrix</value>
+    </return_value>
+  </output>
+  
+   <RDMT_description>
+    <parallel_processing>
+      <parallelism>1</parallelism>
+      <duration>100</duration>
+      <unit>ms</unit>
+    </parallel_processing>
+   </RDMT_description>
+</algorithm>

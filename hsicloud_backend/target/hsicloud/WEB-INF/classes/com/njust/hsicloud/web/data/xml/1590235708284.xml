@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<result>
+  <DagInfo>
+    <dagname>DAG1</dagname>
+    <VMnum>4</VMnum>
+    <ImageId>0</ImageId>
+    <object>maxprofit</object>
+    <TaskInfo>
+      <CloudletID>root</CloudletID>
+      <par>1</par>
+      <VMID>0</VMID>
+      <Time>1</Time>
+      <StartTime>0.0</StartTime>
+      <FinishTime>1.0</FinishTime>
+    </TaskInfo>
+    <TaskInfo>
+      <CloudletID>PCA</CloudletID>
+      <par>1</par>
+      <VMID>0</VMID>
+      <Time>6060</Time>
+      <StartTime>1.0</StartTime>
+      <FinishTime>6061.0</FinishTime>
+    </TaskInfo>
+    <TaskInfo>
+      <CloudletID>PPI</CloudletID>
+      <par>1</par>
+      <VMID>0</VMID>
+      <Time>94415</Time>
+      <StartTime>6061.0</StartTime>
+      <FinishTime>100476.0</FinishTime>
+    </TaskInfo>
+    <TaskInfo>
+      <CloudletID>SAD</CloudletID>
+      <par>1</par>
+      <VMID>0</VMID>
+      <Time>3327</Time>
+      <StartTime>100476.0</StartTime>
+      <FinishTime>103803.0</FinishTime>
+    </TaskInfo>
+    <TaskInfo>
+      <CloudletID>tail</CloudletID>
+      <par>1</par>
+      <VMID>0</VMID>
+      <Time>1</Time>
+      <StartTime>103803.0</StartTime>
+      <FinishTime>103804.0</FinishTime>
+    </TaskInfo>
+  </DagInfo>
+  <timetable/>
+</result>

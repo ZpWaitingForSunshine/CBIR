@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<DAG>
+  <dagname>DAG1</dagname>
+  <VMnum>4</VMnum>
+  <ImageID>0</ImageID>
+  <object>maxprofit</object>
+  <nodes/>
+</DAG>

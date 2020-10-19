@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<algorithm>
+  <name>SAD</name>
+  <id>4</id>
+  <flag>true</flag>
+  <description>match</description>
+  <input>
+    <parameter>
+      <description>pixel set</description>
+      <type>Array</type>
+      <name>matrix</name>
+    </parameter>
+    <parameter>
+      <description>USGS pixel set</description>
+      <type>Array</type>
+      <name>matrix</name>
+    </parameter>
+  </input>
+  <output>
+    <return_value>
+      <description>pixel set</description>
+      <type>Array</type>
+      <name>matrix</name>
+	  </return_value>
+    <return_value>
+      <description>mineral_category</description>
+      <type>string</type>
+    </return_value>
+  </output>
+  <RDMT_description>
+    <parallel_processing>
+      <parallelism>1</parallelism>
+      <duration>3327</duration>
+      <unit>ms</unit>
+    </parallel_processing>
+    <parallel_processing>
+      <parallelism>2</parallelism>
+      <duration>2468</duration>
+      <unit>ms</unit>
+    </parallel_processing>
+    <parallel_processing>
+      <parallelism>4</parallelism>
+      <duration>1544</duration>
+      <unit>ms</unit>
+    </parallel_processing>
+    <parallel_processing>
+      <parallelism>8</parallelism>
+      <duration>857</duration>
+      <unit>ms</unit>
+    </parallel_processing>
+  </RDMT_description>
+</algorithm>

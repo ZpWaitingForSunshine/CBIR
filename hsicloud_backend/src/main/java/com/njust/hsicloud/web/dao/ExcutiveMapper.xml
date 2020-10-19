@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.njust.hsicloud.web.dao.ExcutiveMapper" >
+  <resultMap id="BaseResultMap" type="com.njust.hsicloud.web.model.Excutive" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="uer_name" property="uerName" jdbcType="VARCHAR" />
+    <result column="nodes_numbers" property="nodesNumbers" jdbcType="INTEGER" />
+    <result column="nodes_name" property="nodesName" jdbcType="VARCHAR" />
+    <result column="paramters" property="paramters" jdbcType="VARCHAR" />
+    <result column="dag_link" property="dagLink" jdbcType="VARCHAR" />
+    <result column="dispatch_result" property="dispatchResult" jdbcType="VARCHAR" />
+    <result column="dispatch_local_link" property="dispatchLocalLink" jdbcType="VARCHAR" />
+    <result column="gant_link" property="gantLink" jdbcType="VARCHAR" />
+    <result column="result" property="result" jdbcType="VARCHAR" />
+    <result column="submission_id" property="submissionId" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    id, uer_name, nodes_numbers, nodes_name, paramters, dag_link, dispatch_result, dispatch_local_link, 
+    gant_link, result, submission_id
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.njust.hsicloud.web.model.ExcutiveExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from excutive
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from excutive
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from excutive
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.njust.hsicloud.web.model.ExcutiveExample" >
+    delete from excutive
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.njust.hsicloud.web.model.Excutive"  >
+    insert into excutive (id, uer_name, nodes_numbers, 
+      nodes_name, paramters, dag_link, 
+      dispatch_result, dispatch_local_link, gant_link, 
+      result, submission_id)
+    values (#{id,jdbcType=INTEGER}, #{uerName,jdbcType=VARCHAR}, #{nodesNumbers,jdbcType=INTEGER}, 
+      #{nodesName,jdbcType=VARCHAR}, #{paramters,jdbcType=VARCHAR}, #{dagLink,jdbcType=VARCHAR}, 
+      #{dispatchResult,jdbcType=VARCHAR}, #{dispatchLocalLink,jdbcType=VARCHAR}, #{gantLink,jdbcType=VARCHAR}, 
+      #{result,jdbcType=VARCHAR}, #{submissionId,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.njust.hsicloud.web.model.Excutive" useGeneratedKeys="true" keyProperty="id">
+    insert into excutive
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="uerName != null" >
+        uer_name,
+      </if>
+      <if test="nodesNumbers != null" >
+        nodes_numbers,
+      </if>
+      <if test="nodesName != null" >
+        nodes_name,
+      </if>
+      <if test="paramters != null" >
+        paramters,
+      </if>
+      <if test="dagLink != null" >
+        dag_link,
+      </if>
+      <if test="dispatchResult != null" >
+        dispatch_result,
+      </if>
+      <if test="dispatchLocalLink != null" >
+        dispatch_local_link,
+      </if>
+      <if test="gantLink != null" >
+        gant_link,
+      </if>
+      <if test="result != null" >
+        result,
+      </if>
+      <if test="submissionId != null" >
+        submission_id,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="uerName != null" >
+        #{uerName,jdbcType=VARCHAR},
+      </if>
+      <if test="nodesNumbers != null" >
+        #{nodesNumbers,jdbcType=INTEGER},
+      </if>
+      <if test="nodesName != null" >
+        #{nodesName,jdbcType=VARCHAR},
+      </if>
+      <if test="paramters != null" >
+        #{paramters,jdbcType=VARCHAR},
+      </if>
+      <if test="dagLink != null" >
+        #{dagLink,jdbcType=VARCHAR},
+      </if>
+      <if test="dispatchResult != null" >
+        #{dispatchResult,jdbcType=VARCHAR},
+      </if>
+      <if test="dispatchLocalLink != null" >
+        #{dispatchLocalLink,jdbcType=VARCHAR},
+      </if>
+      <if test="gantLink != null" >
+        #{gantLink,jdbcType=VARCHAR},
+      </if>
+      <if test="result != null" >
+        #{result,jdbcType=VARCHAR},
+      </if>
+      <if test="submissionId != null" >
+        #{submissionId,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.njust.hsicloud.web.model.ExcutiveExample" resultType="java.lang.Integer" >
+    select count(*) from excutive
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update excutive
+    <set >
+      <if test="record.id != null" >
+        id = #{record.id,jdbcType=INTEGER},
+      </if>
+      <if test="record.uerName != null" >
+        uer_name = #{record.uerName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.nodesNumbers != null" >
+        nodes_numbers = #{record.nodesNumbers,jdbcType=INTEGER},
+      </if>
+      <if test="record.nodesName != null" >
+        nodes_name = #{record.nodesName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.paramters != null" >
+        paramters = #{record.paramters,jdbcType=VARCHAR},
+      </if>
+      <if test="record.dagLink != null" >
+        dag_link = #{record.dagLink,jdbcType=VARCHAR},
+      </if>
+      <if test="record.dispatchResult != null" >
+        dispatch_result = #{record.dispatchResult,jdbcType=VARCHAR},
+      </if>
+      <if test="record.dispatchLocalLink != null" >
+        dispatch_local_link = #{record.dispatchLocalLink,jdbcType=VARCHAR},
+      </if>
+      <if test="record.gantLink != null" >
+        gant_link = #{record.gantLink,jdbcType=VARCHAR},
+      </if>
+      <if test="record.result != null" >
+        result = #{record.result,jdbcType=VARCHAR},
+      </if>
+      <if test="record.submissionId != null" >
+        submission_id = #{record.submissionId,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update excutive
+    set id = #{record.id,jdbcType=INTEGER},
+      uer_name = #{record.uerName,jdbcType=VARCHAR},
+      nodes_numbers = #{record.nodesNumbers,jdbcType=INTEGER},
+      nodes_name = #{record.nodesName,jdbcType=VARCHAR},
+      paramters = #{record.paramters,jdbcType=VARCHAR},
+      dag_link = #{record.dagLink,jdbcType=VARCHAR},
+      dispatch_result = #{record.dispatchResult,jdbcType=VARCHAR},
+      dispatch_local_link = #{record.dispatchLocalLink,jdbcType=VARCHAR},
+      gant_link = #{record.gantLink,jdbcType=VARCHAR},
+      result = #{record.result,jdbcType=VARCHAR},
+      submission_id = #{record.submissionId,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.njust.hsicloud.web.model.Excutive" >
+    update excutive
+    <set >
+      <if test="uerName != null" >
+        uer_name = #{uerName,jdbcType=VARCHAR},
+      </if>
+      <if test="nodesNumbers != null" >
+        nodes_numbers = #{nodesNumbers,jdbcType=INTEGER},
+      </if>
+      <if test="nodesName != null" >
+        nodes_name = #{nodesName,jdbcType=VARCHAR},
+      </if>
+      <if test="paramters != null" >
+        paramters = #{paramters,jdbcType=VARCHAR},
+      </if>
+      <if test="dagLink != null" >
+        dag_link = #{dagLink,jdbcType=VARCHAR},
+      </if>
+      <if test="dispatchResult != null" >
+        dispatch_result = #{dispatchResult,jdbcType=VARCHAR},
+      </if>
+      <if test="dispatchLocalLink != null" >
+        dispatch_local_link = #{dispatchLocalLink,jdbcType=VARCHAR},
+      </if>
+      <if test="gantLink != null" >
+        gant_link = #{gantLink,jdbcType=VARCHAR},
+      </if>
+      <if test="result != null" >
+        result = #{result,jdbcType=VARCHAR},
+      </if>
+      <if test="submissionId != null" >
+        submission_id = #{submissionId,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.njust.hsicloud.web.model.Excutive" >
+    update excutive
+    set uer_name = #{uerName,jdbcType=VARCHAR},
+      nodes_numbers = #{nodesNumbers,jdbcType=INTEGER},
+      nodes_name = #{nodesName,jdbcType=VARCHAR},
+      paramters = #{paramters,jdbcType=VARCHAR},
+      dag_link = #{dagLink,jdbcType=VARCHAR},
+      dispatch_result = #{dispatchResult,jdbcType=VARCHAR},
+      dispatch_local_link = #{dispatchLocalLink,jdbcType=VARCHAR},
+      gant_link = #{gantLink,jdbcType=VARCHAR},
+      result = #{result,jdbcType=VARCHAR},
+      submission_id = #{submissionId,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

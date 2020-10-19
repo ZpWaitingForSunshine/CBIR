@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="hsicloud:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>hsicloud</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="hsicloud.war">
+      <element id="artifact" artifact-name="hsicloud:war exploded" />
+    </root>
+  </artifact>
+</component>

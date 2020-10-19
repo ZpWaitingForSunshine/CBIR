@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+  <!--声明内部DTD-->
+  <!DOCTYPE result[
+  
+  ]>
+<result>
+
+  <DagInfo>
+        <dagname>DAG1</dagname>
+        <VMnum>4</VMnum>
+        <ImageId>0</ImageId>
+        <object>maxprofit</object> 
+  </DagInfo>
+    
+  <timetable> 
+    <TaskInfo>
+        <CloudletID>root</CloudletID>
+        <STATUS> SUCCESS</STATUS>
+        <Flag>false</Flag>
+        <Parallelism>1</Parallelism>
+        <DatacenterID> 2</DatacenterID>
+        <VMID>1</VMID>
+        <Time> 1</Time>
+        <StartTime> 0.1</StartTime>
+        <FinishTime> 1.1</FinishTime>
+    </TaskInfo>
+    <TaskInfo>
+         <CloudletID>Read</CloudletID>
+         <STATUS> SUCCESS</STATUS>
+         <Flag>false</Flag>
+         <Parallelism>1</Parallelism>
+         <DatacenterID> 2</DatacenterID>
+         <VMID> 2</VMID>
+         <Time> 10500</Time>
+         <StartTime> 1.1</StartTime>
+         <FinishTime> 10501.1</FinishTime>
+    </TaskInfo>
+    <TaskInfo>
+        <CloudletID>PCA</CloudletID>
+        <STATUS> SUCCESS</STATUS>
+        <Flag>true</Flag>
+        <Parallelism>4</Parallelism>
+        <DatacenterID> 2</DatacenterID>
+        <VMID> 0</VMID>
+        <VMID> 1</VMID>
+        <VMID> 3</VMID>
+        <VMID> 4</VMID>
+        <Time> 2022</Time>
+        <StartTime> 25033.1</StartTime>
+        <FinishTime> 27055.1</FinishTime>
+   </TaskInfo>
+</timetable>
+</result>

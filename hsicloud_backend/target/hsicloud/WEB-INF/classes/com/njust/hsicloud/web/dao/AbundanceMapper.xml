@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.njust.hsicloud.web.dao.AbundanceMapper" >
+  <resultMap id="BaseResultMap" type="com.njust.hsicloud.web.model.Abundance" >
+    <id column="imageid" property="imageid" jdbcType="INTEGER" />
+    <id column="specid" property="specid" jdbcType="INTEGER" />
+    <result column="abundance" property="abundance" jdbcType="DOUBLE" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    imageid, specid, abundance
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.njust.hsicloud.web.model.AbundanceExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from abundance
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="com.njust.hsicloud.web.model.AbundanceKey" >
+    select 
+    <include refid="Base_Column_List" />
+    from abundance
+    where imageid = #{imageid,jdbcType=INTEGER}
+      and specid = #{specid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="com.njust.hsicloud.web.model.AbundanceKey" >
+    delete from abundance
+    where imageid = #{imageid,jdbcType=INTEGER}
+      and specid = #{specid,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.njust.hsicloud.web.model.AbundanceExample" >
+    delete from abundance
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.njust.hsicloud.web.model.Abundance" >
+    insert into abundance (imageid, specid, abundance
+      )
+    values (#{imageid,jdbcType=INTEGER}, #{specid,jdbcType=INTEGER}, #{abundance,jdbcType=DOUBLE}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.njust.hsicloud.web.model.Abundance" >
+    insert into abundance
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="imageid != null" >
+        imageid,
+      </if>
+      <if test="specid != null" >
+        specid,
+      </if>
+      <if test="abundance != null" >
+        abundance,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="imageid != null" >
+        #{imageid,jdbcType=INTEGER},
+      </if>
+      <if test="specid != null" >
+        #{specid,jdbcType=INTEGER},
+      </if>
+      <if test="abundance != null" >
+        #{abundance,jdbcType=DOUBLE},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.njust.hsicloud.web.model.AbundanceExample" resultType="java.lang.Integer" >
+    select count(*) from abundance
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update abundance
+    <set >
+      <if test="record.imageid != null" >
+        imageid = #{record.imageid,jdbcType=INTEGER},
+      </if>
+      <if test="record.specid != null" >
+        specid = #{record.specid,jdbcType=INTEGER},
+      </if>
+      <if test="record.abundance != null" >
+        abundance = #{record.abundance,jdbcType=DOUBLE},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update abundance
+    set imageid = #{record.imageid,jdbcType=INTEGER},
+      specid = #{record.specid,jdbcType=INTEGER},
+      abundance = #{record.abundance,jdbcType=DOUBLE}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.njust.hsicloud.web.model.Abundance" >
+    update abundance
+    <set >
+      <if test="abundance != null" >
+        abundance = #{abundance,jdbcType=DOUBLE},
+      </if>
+    </set>
+    where imageid = #{imageid,jdbcType=INTEGER}
+      and specid = #{specid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.njust.hsicloud.web.model.Abundance" >
+    update abundance
+    set abundance = #{abundance,jdbcType=DOUBLE}
+    where imageid = #{imageid,jdbcType=INTEGER}
+      and specid = #{specid,jdbcType=INTEGER}
+  </update>
+
+  <select id="searchHSI" parameterType="java.util.Map" resultType="com.njust.hsicloud.web.model.ImageWithBLOBs">
+    select * from image WHERE image.id in (
+    select
+    imageid
+    from
+    abundance a
+    <where>
+      1=1
+      AND (
+      <foreach collection="list" item="item" index="index">
+        <if test="index ==0">
+          (a.specid = #{item.param1} and a.abundance > #{item.param2})
+        </if>
+        <if test="index !=0">
+          or (a.specid = #{item.param1} and a.abundance > #{item.param2})
+        </if>
+      </foreach>
+      )
+    </where>
+    GROUP BY imageid HAVING COUNT(imageid) >= ${listSize}
+    )
+  </select>
+
+  <insert id="insertAbundances" parameterType="java.util.Map" useGeneratedKeys="true" keyProperty="id" keyColumn="id">
+    insert into abundance
+    (   imageid,
+        specid,
+        abundance   )
+    values
+    <foreach collection="list" item="item" index="index" separator=",">
+      <trim prefix="(" suffix=")" suffixOverrides="," >
+          #{imageid},
+          #{item.specid},
+          #{item.abundance},
+      </trim>
+    </foreach>
+
+  </insert>
+
+</mapper>

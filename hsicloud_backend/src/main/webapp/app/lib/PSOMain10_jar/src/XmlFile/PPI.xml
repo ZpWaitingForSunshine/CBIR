@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<algorithm>
+  <name>PPI</name>
+  <id>3</id>
+  <flag>true</flag>
+  <description>Endmember Extract</description> 
+  <input>
+	  <parameter>
+      <description>Dimensional hyperspectral data</description>
+       <type>Array</type>
+       <name>matrix</name>
+    </parameter> 
+  </input> 
+  <output>
+    <return_value>
+      <description>pixel set</description>
+      <type>Array</type>
+      <name>matrix</name>
+    </return_value>
+  </output>
+  <RDMT_description>
+    <parallel_processing>
+      <parallelism>1</parallelism>
+      <duration>94415</duration>
+      <unit>ms</unit>
+    </parallel_processing>
+    <parallel_processing>
+      <parallelism>2</parallelism>
+      <duration>49214</duration>
+      <unit>ms</unit>
+    </parallel_processing>
+    <parallel_processing>
+      <parallelism>4</parallelism>
+      <duration>28071</duration>
+      <unit>ms</unit>
+    </parallel_processing>
+    <parallel_processing>
+      <parallelism>8</parallelism>
+      <duration>30193</duration>
+      <unit>ms</unit>
+    </parallel_processing>
+    
+  </RDMT_description>
+</algorithm>

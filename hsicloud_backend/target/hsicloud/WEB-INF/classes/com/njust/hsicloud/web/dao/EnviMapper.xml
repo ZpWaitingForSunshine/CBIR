@@ -1,0 +1,506 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.njust.hsicloud.web.dao.EnviMapper" >
+  <resultMap id="BaseResultMap" type="com.njust.hsicloud.web.model.Envi" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="filename" property="filename" jdbcType="VARCHAR" />
+    <result column="samples" property="samples" jdbcType="INTEGER" />
+    <result column="rows" property="rows" jdbcType="INTEGER" />
+    <result column="bands" property="bands" jdbcType="INTEGER" />
+    <result column="headeroffset" property="headeroffset" jdbcType="INTEGER" />
+    <result column="filetype" property="filetype" jdbcType="VARCHAR" />
+    <result column="datatype" property="datatype" jdbcType="INTEGER" />
+    <result column="interleave" property="interleave" jdbcType="VARCHAR" />
+    <result column="byteorder" property="byteorder" jdbcType="INTEGER" />
+    <result column="bandnames" property="bandnames" jdbcType="VARCHAR" />
+    <result column="wavelength" property="wavelength" jdbcType="VARCHAR" />
+    <result column="Timeofexposure" property="timeofexposure" jdbcType="VARCHAR" />
+    <result column="ImageBin" property="imagebin" jdbcType="INTEGER" />
+    <result column="AutoExpROIX" property="autoexproix" jdbcType="INTEGER" />
+    <result column="AutoExpROIY" property="autoexproiy" jdbcType="INTEGER" />
+    <result column="AutoExpROIWidth" property="autoexproiwidth" jdbcType="INTEGER" />
+    <result column="AutoExpROIHeight" property="autoexproiheight" jdbcType="INTEGER" />
+    <result column="Gain" property="gain" jdbcType="REAL" />
+    <result column="Exposurecoefficient" property="exposurecoefficient" jdbcType="REAL" />
+    <result column="LCTFTemperature" property="lctftemperature" jdbcType="REAL" />
+    <result column="hdfs" property="hdfs" jdbcType="VARCHAR" />
+    <result column="thumbnailurl" property="thumbnailurl" jdbcType="VARCHAR" />
+    <result column="size" property="size" jdbcType="INTEGER" />
+  </resultMap>
+
+  <select id="getAllEnvi" resultMap="BaseResultMap">
+    select * from envi
+  </select>
+
+  <select id="getByFilename" resultMap="BaseResultMap" parameterType="java.lang.String">
+    select *  from envi where filename = #{filename,jdbcType=VARCHAR}
+  </select>
+
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    id, filename, samples, rows, bands, headeroffset, filetype, datatype, interleave,
+    byteorder, bandnames, wavelength, Timeofexposure, ImageBin, AutoExpROIX, AutoExpROIY,
+    AutoExpROIWidth, AutoExpROIHeight, Gain, Exposurecoefficient, LCTFTemperature, hdfs,
+    thumbnailurl
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.njust.hsicloud.web.model.EnviExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from envi
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select
+    <include refid="Base_Column_List" />
+    from envi
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from envi
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.njust.hsicloud.web.model.EnviExample" >
+    delete from envi
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.njust.hsicloud.web.model.Envi" >
+    insert into envi (id, filename, samples,
+      rows, bands, headeroffset,
+      filetype, datatype, interleave,
+      byteorder, bandnames, wavelength,
+      Timeofexposure, ImageBin, AutoExpROIX,
+      AutoExpROIY, AutoExpROIWidth, AutoExpROIHeight,
+      Gain, Exposurecoefficient, LCTFTemperature,
+      hdfs, thumbnailurl)
+    values (#{id,jdbcType=INTEGER}, #{filename,jdbcType=VARCHAR}, #{samples,jdbcType=INTEGER},
+      #{rows,jdbcType=INTEGER}, #{bands,jdbcType=INTEGER}, #{headeroffset,jdbcType=INTEGER},
+      #{filetype,jdbcType=VARCHAR}, #{datatype,jdbcType=INTEGER}, #{interleave,jdbcType=VARCHAR},
+      #{byteorder,jdbcType=INTEGER}, #{bandnames,jdbcType=VARCHAR}, #{wavelength,jdbcType=VARCHAR},
+      #{timeofexposure,jdbcType=VARCHAR}, #{imagebin,jdbcType=INTEGER}, #{autoexproix,jdbcType=INTEGER},
+      #{autoexproiy,jdbcType=INTEGER}, #{autoexproiwidth,jdbcType=INTEGER}, #{autoexproiheight,jdbcType=INTEGER},
+      #{gain,jdbcType=REAL}, #{exposurecoefficient,jdbcType=REAL}, #{lctftemperature,jdbcType=REAL},
+      #{hdfs,jdbcType=VARCHAR}, #{thumbnailurl,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.njust.hsicloud.web.model.Envi" >
+    insert into envi
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="filename != null" >
+        filename,
+      </if>
+      <if test="samples != null" >
+        samples,
+      </if>
+      <if test="rows != null" >
+        rows,
+      </if>
+      <if test="bands != null" >
+        bands,
+      </if>
+      <if test="headeroffset != null" >
+        headeroffset,
+      </if>
+      <if test="filetype != null" >
+        filetype,
+      </if>
+      <if test="datatype != null" >
+        datatype,
+      </if>
+      <if test="interleave != null" >
+        interleave,
+      </if>
+      <if test="byteorder != null" >
+        byteorder,
+      </if>
+      <if test="bandnames != null" >
+        bandnames,
+      </if>
+      <if test="wavelength != null" >
+        wavelength,
+      </if>
+      <if test="timeofexposure != null" >
+        Timeofexposure,
+      </if>
+      <if test="imagebin != null" >
+        ImageBin,
+      </if>
+      <if test="autoexproix != null" >
+        AutoExpROIX,
+      </if>
+      <if test="autoexproiy != null" >
+        AutoExpROIY,
+      </if>
+      <if test="autoexproiwidth != null" >
+        AutoExpROIWidth,
+      </if>
+      <if test="autoexproiheight != null" >
+        AutoExpROIHeight,
+      </if>
+      <if test="gain != null" >
+        Gain,
+      </if>
+      <if test="exposurecoefficient != null" >
+        Exposurecoefficient,
+      </if>
+      <if test="lctftemperature != null" >
+        LCTFTemperature,
+      </if>
+      <if test="hdfs != null" >
+        hdfs,
+      </if>
+      <if test="thumbnailurl != null" >
+        thumbnailurl,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="filename != null" >
+        #{filename,jdbcType=VARCHAR},
+      </if>
+      <if test="samples != null" >
+        #{samples,jdbcType=INTEGER},
+      </if>
+      <if test="rows != null" >
+        #{rows,jdbcType=INTEGER},
+      </if>
+      <if test="bands != null" >
+        #{bands,jdbcType=INTEGER},
+      </if>
+      <if test="headeroffset != null" >
+        #{headeroffset,jdbcType=INTEGER},
+      </if>
+      <if test="filetype != null" >
+        #{filetype,jdbcType=VARCHAR},
+      </if>
+      <if test="datatype != null" >
+        #{datatype,jdbcType=INTEGER},
+      </if>
+      <if test="interleave != null" >
+        #{interleave,jdbcType=VARCHAR},
+      </if>
+      <if test="byteorder != null" >
+        #{byteorder,jdbcType=INTEGER},
+      </if>
+      <if test="bandnames != null" >
+        #{bandnames,jdbcType=VARCHAR},
+      </if>
+      <if test="wavelength != null" >
+        #{wavelength,jdbcType=VARCHAR},
+      </if>
+      <if test="timeofexposure != null" >
+        #{timeofexposure,jdbcType=VARCHAR},
+      </if>
+      <if test="imagebin != null" >
+        #{imagebin,jdbcType=INTEGER},
+      </if>
+      <if test="autoexproix != null" >
+        #{autoexproix,jdbcType=INTEGER},
+      </if>
+      <if test="autoexproiy != null" >
+        #{autoexproiy,jdbcType=INTEGER},
+      </if>
+      <if test="autoexproiwidth != null" >
+        #{autoexproiwidth,jdbcType=INTEGER},
+      </if>
+      <if test="autoexproiheight != null" >
+        #{autoexproiheight,jdbcType=INTEGER},
+      </if>
+      <if test="gain != null" >
+        #{gain,jdbcType=REAL},
+      </if>
+      <if test="exposurecoefficient != null" >
+        #{exposurecoefficient,jdbcType=REAL},
+      </if>
+      <if test="lctftemperature != null" >
+        #{lctftemperature,jdbcType=REAL},
+      </if>
+      <if test="hdfs != null" >
+        #{hdfs,jdbcType=VARCHAR},
+      </if>
+      <if test="thumbnailurl != null" >
+        #{thumbnailurl,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.njust.hsicloud.web.model.EnviExample" resultType="java.lang.Integer" >
+    select count(*) from envi
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update envi
+    <set >
+      <if test="record.id != null" >
+        id = #{record.id,jdbcType=INTEGER},
+      </if>
+      <if test="record.filename != null" >
+        filename = #{record.filename,jdbcType=VARCHAR},
+      </if>
+      <if test="record.samples != null" >
+        samples = #{record.samples,jdbcType=INTEGER},
+      </if>
+      <if test="record.rows != null" >
+        rows = #{record.rows,jdbcType=INTEGER},
+      </if>
+      <if test="record.bands != null" >
+        bands = #{record.bands,jdbcType=INTEGER},
+      </if>
+      <if test="record.headeroffset != null" >
+        headeroffset = #{record.headeroffset,jdbcType=INTEGER},
+      </if>
+      <if test="record.filetype != null" >
+        filetype = #{record.filetype,jdbcType=VARCHAR},
+      </if>
+      <if test="record.datatype != null" >
+        datatype = #{record.datatype,jdbcType=INTEGER},
+      </if>
+      <if test="record.interleave != null" >
+        interleave = #{record.interleave,jdbcType=VARCHAR},
+      </if>
+      <if test="record.byteorder != null" >
+        byteorder = #{record.byteorder,jdbcType=INTEGER},
+      </if>
+      <if test="record.bandnames != null" >
+        bandnames = #{record.bandnames,jdbcType=VARCHAR},
+      </if>
+      <if test="record.wavelength != null" >
+        wavelength = #{record.wavelength,jdbcType=VARCHAR},
+      </if>
+      <if test="record.timeofexposure != null" >
+        Timeofexposure = #{record.timeofexposure,jdbcType=VARCHAR},
+      </if>
+      <if test="record.imagebin != null" >
+        ImageBin = #{record.imagebin,jdbcType=INTEGER},
+      </if>
+      <if test="record.autoexproix != null" >
+        AutoExpROIX = #{record.autoexproix,jdbcType=INTEGER},
+      </if>
+      <if test="record.autoexproiy != null" >
+        AutoExpROIY = #{record.autoexproiy,jdbcType=INTEGER},
+      </if>
+      <if test="record.autoexproiwidth != null" >
+        AutoExpROIWidth = #{record.autoexproiwidth,jdbcType=INTEGER},
+      </if>
+      <if test="record.autoexproiheight != null" >
+        AutoExpROIHeight = #{record.autoexproiheight,jdbcType=INTEGER},
+      </if>
+      <if test="record.gain != null" >
+        Gain = #{record.gain,jdbcType=REAL},
+      </if>
+      <if test="record.exposurecoefficient != null" >
+        Exposurecoefficient = #{record.exposurecoefficient,jdbcType=REAL},
+      </if>
+      <if test="record.lctftemperature != null" >
+        LCTFTemperature = #{record.lctftemperature,jdbcType=REAL},
+      </if>
+      <if test="record.hdfs != null" >
+        hdfs = #{record.hdfs,jdbcType=VARCHAR},
+      </if>
+      <if test="record.thumbnailurl != null" >
+        thumbnailurl = #{record.thumbnailurl,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update envi
+    set id = #{record.id,jdbcType=INTEGER},
+      filename = #{record.filename,jdbcType=VARCHAR},
+      samples = #{record.samples,jdbcType=INTEGER},
+      rows = #{record.rows,jdbcType=INTEGER},
+      bands = #{record.bands,jdbcType=INTEGER},
+      headeroffset = #{record.headeroffset,jdbcType=INTEGER},
+      filetype = #{record.filetype,jdbcType=VARCHAR},
+      datatype = #{record.datatype,jdbcType=INTEGER},
+      interleave = #{record.interleave,jdbcType=VARCHAR},
+      byteorder = #{record.byteorder,jdbcType=INTEGER},
+      bandnames = #{record.bandnames,jdbcType=VARCHAR},
+      wavelength = #{record.wavelength,jdbcType=VARCHAR},
+      Timeofexposure = #{record.timeofexposure,jdbcType=VARCHAR},
+      ImageBin = #{record.imagebin,jdbcType=INTEGER},
+      AutoExpROIX = #{record.autoexproix,jdbcType=INTEGER},
+      AutoExpROIY = #{record.autoexproiy,jdbcType=INTEGER},
+      AutoExpROIWidth = #{record.autoexproiwidth,jdbcType=INTEGER},
+      AutoExpROIHeight = #{record.autoexproiheight,jdbcType=INTEGER},
+      Gain = #{record.gain,jdbcType=REAL},
+      Exposurecoefficient = #{record.exposurecoefficient,jdbcType=REAL},
+      LCTFTemperature = #{record.lctftemperature,jdbcType=REAL},
+      hdfs = #{record.hdfs,jdbcType=VARCHAR},
+      thumbnailurl = #{record.thumbnailurl,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.njust.hsicloud.web.model.Envi" >
+    update envi
+    <set >
+      <if test="filename != null" >
+        filename = #{filename,jdbcType=VARCHAR},
+      </if>
+      <if test="samples != null" >
+        samples = #{samples,jdbcType=INTEGER},
+      </if>
+      <if test="rows != null" >
+        rows = #{rows,jdbcType=INTEGER},
+      </if>
+      <if test="bands != null" >
+        bands = #{bands,jdbcType=INTEGER},
+      </if>
+      <if test="headeroffset != null" >
+        headeroffset = #{headeroffset,jdbcType=INTEGER},
+      </if>
+      <if test="filetype != null" >
+        filetype = #{filetype,jdbcType=VARCHAR},
+      </if>
+      <if test="datatype != null" >
+        datatype = #{datatype,jdbcType=INTEGER},
+      </if>
+      <if test="interleave != null" >
+        interleave = #{interleave,jdbcType=VARCHAR},
+      </if>
+      <if test="byteorder != null" >
+        byteorder = #{byteorder,jdbcType=INTEGER},
+      </if>
+      <if test="bandnames != null" >
+        bandnames = #{bandnames,jdbcType=VARCHAR},
+      </if>
+      <if test="wavelength != null" >
+        wavelength = #{wavelength,jdbcType=VARCHAR},
+      </if>
+      <if test="timeofexposure != null" >
+        Timeofexposure = #{timeofexposure,jdbcType=VARCHAR},
+      </if>
+      <if test="imagebin != null" >
+        ImageBin = #{imagebin,jdbcType=INTEGER},
+      </if>
+      <if test="autoexproix != null" >
+        AutoExpROIX = #{autoexproix,jdbcType=INTEGER},
+      </if>
+      <if test="autoexproiy != null" >
+        AutoExpROIY = #{autoexproiy,jdbcType=INTEGER},
+      </if>
+      <if test="autoexproiwidth != null" >
+        AutoExpROIWidth = #{autoexproiwidth,jdbcType=INTEGER},
+      </if>
+      <if test="autoexproiheight != null" >
+        AutoExpROIHeight = #{autoexproiheight,jdbcType=INTEGER},
+      </if>
+      <if test="gain != null" >
+        Gain = #{gain,jdbcType=REAL},
+      </if>
+      <if test="exposurecoefficient != null" >
+        Exposurecoefficient = #{exposurecoefficient,jdbcType=REAL},
+      </if>
+      <if test="lctftemperature != null" >
+        LCTFTemperature = #{lctftemperature,jdbcType=REAL},
+      </if>
+      <if test="hdfs != null" >
+        hdfs = #{hdfs,jdbcType=VARCHAR},
+      </if>
+      <if test="thumbnailurl != null" >
+        thumbnailurl = #{thumbnailurl,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.njust.hsicloud.web.model.Envi" >
+    update envi
+    set filename = #{filename,jdbcType=VARCHAR},
+      samples = #{samples,jdbcType=INTEGER},
+      rows = #{rows,jdbcType=INTEGER},
+      bands = #{bands,jdbcType=INTEGER},
+      headeroffset = #{headeroffset,jdbcType=INTEGER},
+      filetype = #{filetype,jdbcType=VARCHAR},
+      datatype = #{datatype,jdbcType=INTEGER},
+      interleave = #{interleave,jdbcType=VARCHAR},
+      byteorder = #{byteorder,jdbcType=INTEGER},
+      bandnames = #{bandnames,jdbcType=VARCHAR},
+      wavelength = #{wavelength,jdbcType=VARCHAR},
+      Timeofexposure = #{timeofexposure,jdbcType=VARCHAR},
+      ImageBin = #{imagebin,jdbcType=INTEGER},
+      AutoExpROIX = #{autoexproix,jdbcType=INTEGER},
+      AutoExpROIY = #{autoexproiy,jdbcType=INTEGER},
+      AutoExpROIWidth = #{autoexproiwidth,jdbcType=INTEGER},
+      AutoExpROIHeight = #{autoexproiheight,jdbcType=INTEGER},
+      Gain = #{gain,jdbcType=REAL},
+      Exposurecoefficient = #{exposurecoefficient,jdbcType=REAL},
+      LCTFTemperature = #{lctftemperature,jdbcType=REAL},
+      hdfs = #{hdfs,jdbcType=VARCHAR},
+      thumbnailurl = #{thumbnailurl,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

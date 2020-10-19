@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<algorithm>
+  <name>KMeans</name>
+  <id>5</id>
+  <flag>true</flag>
+  <description>classify</description>
+  <input>
+    <parameter>
+      <description>pixel set</description>
+      <type>Array</type>
+      <name>matrix</name>
+    </parameter>
+    <parameter>
+      <description>class_number</description>
+      <type>int</type>
+      <name>N</name>
+    </parameter>
+    <parameter>
+      <description>threshold</description>
+      <type>int</type>
+      <name>M</name>
+    </parameter>
+    <parameter>
+      <description>iterations</description>
+      <type>int</type>
+      <name>K</name>
+    </parameter>
+  </input>
+  <output>
+    <return_value>
+      <description>classfied hyperspectral data</description>
+      <type>Array</type>
+      <name>matrix</name>
+    </return_value>
+  </output>
+  <RDMT_description>
+    <parallel_processing>
+      <parallelism>1</parallelism>
+      <duration>8078</duration>
+      <unit>ms</unit>
+    </parallel_processing>
+    <parallel_processing>
+      <parallelism>2</parallelism>
+      <duration>4218</duration>
+      <unit>ms</unit>
+    </parallel_processing>
+    <parallel_processing>
+      <parallelism>4</parallelism>
+      <duration>2573</duration>
+      <unit>ms</unit>
+    </parallel_processing>
+    <parallel_processing>
+      <parallelism>8</parallelism>
+      <duration>2784</duration>
+      <unit>ms</unit>
+    </parallel_processing>
+  </RDMT_description>
+  
+</algorithm>
+

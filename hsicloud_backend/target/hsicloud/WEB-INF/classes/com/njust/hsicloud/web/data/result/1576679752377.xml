@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<DAG>
+  <dagname>DAG1</dagname>
+  <VMnum>4</VMnum>
+  <ImageID>0</ImageID>
+  <object>maxprofit</object>
+  <nodes>
+    <node>
+      <id>100</id>
+      <name>PCA</name>
+      <url>/home/hadoop/Desktop/quick4j-master/src/main/java/com/eliteams/quick4j/core/assist/xmlFile/PCA.xml</url>
+      <flag>true</flag>
+      <predecessor></predecessor>
+      <successor>101</successor>
+    </node>
+    <node>
+      <id>101</id>
+      <name>PPI</name>
+      <url>/home/hadoop/Desktop/quick4j-master/src/main/java/com/eliteams/quick4j/core/assist/xmlFile/PPI.xml</url>
+      <flag>true</flag>
+      <predecessor>100</predecessor>
+      <successor></successor>
+    </node>
+  </nodes>
+</DAG>
