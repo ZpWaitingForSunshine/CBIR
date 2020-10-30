@@ -80,7 +80,7 @@ Note: set the IP until adaptive
 
 In what follows, we provide a simple step-by-step example to demonstrate how to perform a simple hyperspectral image retrieval in our system. 
 
-![alt Figure 1](图片列表)
+![alt Figure 1](https://raw.githubusercontent.com/ZpWaitingForSunshine/CBIR/master/screenshot/flow1.png)
 
  Figure 1 shows the list of HSIs in our system with their general metadata. 
  
