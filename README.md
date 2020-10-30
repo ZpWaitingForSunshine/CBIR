@@ -82,26 +82,28 @@ In what follows, we provide a simple step-by-step example to demonstrate how to 
 
 ![alt Figure 1](https://raw.githubusercontent.com/ZpWaitingForSunshine/CBIR/master/screenshot/flow1.png)
 
+ Figure 1
+
  Figure 1 shows the list of HSIs in our system with their general metadata. 
  
-![alt Figure 2](图片细节)
+![alt Figure 2](https://raw.githubusercontent.com/ZpWaitingForSunshine/CBIR/master/screenshot/flowb.png)
 
  Click the *View* command button and then the HSI’s information including all metadata, thumbnail, its endmembers’ spectrum, and the ratio of every endmember will be displayed in detail as shown in Figure 2.
 
 
-![alt Figure 3](上传HDR)
+![alt Figure 3](https://raw.githubusercontent.com/ZpWaitingForSunshine/CBIR/master/screenshot/screenshot1.jpg)
 
-![alt Figure 4](上传源文件)
+![alt Figure 4](https://raw.githubusercontent.com/ZpWaitingForSunshine/CBIR/master/screenshot/screenshot2.jpg)
 
 To expand the HSI repository, the system provides an interface for uploading as shown in Figure 3 and 4. Once an HSI is uploaded, the users can decide which unmixing algorithms to extract the spectral information.
  
-![alt Figure 5](解混参数填写界面)
+![alt Figure 5](https://raw.githubusercontent.com/ZpWaitingForSunshine/CBIR/master/screenshot/flow3.png)
 
 As shown in Figure 5, the PPI, SAD and SCLS algorithms based on Spark were chose which can be executed in appointed cluster in the cloud framework. In addition, the parameters including Driver-Memory, Executor-Memory, and Executor-Cores for task execution can also be specified in the web page.
 
 After the unmixing algorithms have been executed, the HSI spectral information obtained as a complement will be automatically cataloged in the database table *abundance*. 
 
-![alt Figure 6](检索界面)
+![alt Figure 6](https://raw.githubusercontent.com/ZpWaitingForSunshine/CBIR/master/screenshot/flowd.png)
 
 Figure 6 shows a querying example, in which we specified two spectral signatures (clinochiore\_Fe GDS157 and Eugsterite GDS140 Syn) from United States Geological Survey (USGS) library as the query criteria. The minimum abundance is set to 0.1 that means the HSIs we are looking forward to contain at least 10\% clinochiore\_Fe GDS157 and10\% Eugsterite GDS140 Syn. The query result will be shown as a list and corresponding HSI’s information can be viewed by click the View button. In this case, the HSI whose id is 41 contains 21.05\% clinochiore\_Fe GDS157 and  18.25\% Eugsterite GDS140 Syn which satisfies the query criteria accurately.
 
