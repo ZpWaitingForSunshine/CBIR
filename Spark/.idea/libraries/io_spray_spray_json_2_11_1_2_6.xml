@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="io.spray:spray-json_2.11:1.2.6" type="repository">
+    <properties maven-id="io.spray:spray-json_2.11:1.2.6" />
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/io/spray/spray-json_2.11/1.2.6/spray-json_2.11-1.2.6.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/org/scala-lang/scala-library/2.11.0/scala-library-2.11.0.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/org/parboiled/parboiled-scala_2.11/1.1.6/parboiled-scala_2.11-1.1.6.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/org/parboiled/parboiled-core/1.1.6/parboiled-core-1.1.6.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

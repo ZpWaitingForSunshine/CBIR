@@ -64,6 +64,23 @@ public class ImageController {
 
     private int imgId = 0;
 
+
+
+    /**
+     *  get all HSIs
+     *
+     */
+    @RequestMapping(value = "/index", method = RequestMethod.GET,produces = "application/json;charset=UTF-8")
+    public @ResponseBody
+    String index() {
+        JSONObject jResult = new JSONObject();
+        jResult.put("data", "ddd" );
+        jResult.put("code", 200);
+        jResult.put("total", 2);
+        return jResult.toString();
+    }
+
+
     /**
      *  get all HSIs
      *

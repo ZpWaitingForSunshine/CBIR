@@ -1,0 +1,873 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="Spark_PPI:jar" />
+    </artifacts-to-build>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="de59fcf4-281f-411a-991f-9168e164832a" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hsicloud_backend/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱图像/C188/c188" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱图像/C188/c188.HDR" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱图像/Cuprite_S1_F224/Cuprite_S1_F224.hdr" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱图像/Cuprite_S1_F224/Cuprite_S1_F224.img" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱图像/Cuprite_S1_R188/Cuprite_S1_R188.hdr" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱图像/Cuprite_S1_R188/Cuprite_S1_R188.img" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱图像/Indian_pines/Indian_pines" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱图像/Indian_pines/Indian_pines.hdr" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱图像/PaviaU/PaviaU" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱图像/PaviaU/PaviaU.hdr" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱图像/Urban_F210/Urban_F210.hdr" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱图像/Urban_F210/Urban_F210.img" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱图像/c350bip/c350bip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱图像/c350bip/c350bip.hdr" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱图像/groundTruth_Cuprite_end12 (2)/groundTruth_Cuprite_end12/#1 Alunite_m.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱图像/groundTruth_Cuprite_end12 (2)/groundTruth_Cuprite_end12/#10 Pyrope_m.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱图像/groundTruth_Cuprite_end12 (2)/groundTruth_Cuprite_end12/#11 Sphene_m.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱图像/groundTruth_Cuprite_end12 (2)/groundTruth_Cuprite_end12/#12 Chalcedony_m.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱图像/groundTruth_Cuprite_end12 (2)/groundTruth_Cuprite_end12/#2 Andradite_m.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱图像/groundTruth_Cuprite_end12 (2)/groundTruth_Cuprite_end12/#3 Buddingtonite_m.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱图像/groundTruth_Cuprite_end12 (2)/groundTruth_Cuprite_end12/#4 Dumortierite_m.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱图像/groundTruth_Cuprite_end12 (2)/groundTruth_Cuprite_end12/#5 Kaolinite_1_m.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱图像/groundTruth_Cuprite_end12 (2)/groundTruth_Cuprite_end12/#6 Kaolinite_2_m.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱图像/groundTruth_Cuprite_end12 (2)/groundTruth_Cuprite_end12/#7 Muscovite_m.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱图像/groundTruth_Cuprite_end12 (2)/groundTruth_Cuprite_end12/#8 Montmorillonite_m.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱图像/groundTruth_Cuprite_end12 (2)/groundTruth_Cuprite_end12/#9 Nontronite_m.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱图像/groundTruth_Cuprite_end12 (2)/groundTruth_Cuprite_end12/Cuprite_nEnd12.fig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱图像/groundTruth_Cuprite_end12 (2)/groundTruth_Cuprite_end12/Cuprite_nEnd12_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱图像/jasperRidge2_R198/jasperRidge2_R198" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱图像/jasperRidge2_R198/jasperRidge2_R198.hdr" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱图像/matlab数据/Indian_pines.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱图像/matlab数据/Indian_pines_corrected.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱图像/matlab数据/Indian_pines_gt.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱图像/matlab数据/PaviaU.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱图像/matlab数据/PaviaU_gt.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱图像/matlab数据/Simu_data.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱图像/matlab数据/Simu_label.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱图像/matlab数据/salinas_corrected.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱图像/matlab数据/salinas_gt.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱图像/samson1/samson_1.img" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱图像/samson1/samson_1.img.hdr" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱图像/samson2/samson_2.2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱图像/samson2/samson_2.hdr" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱图像/合成大数据/MNF.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱图像/合成大数据/MNF.hdr" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱图像/合成大数据/PPI.cnt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱图像/合成大数据/PPI.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱图像/合成大数据/PPI.hdr" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱图像/合成大数据/Spark_PPI.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱图像/合成大数据/USug.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱图像/合成大数据/X" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱图像/合成大数据/X.hdr" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱图像/合成大数据/analogdata.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱图像/合成大数据/analogdata.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱图像/合成大数据/c350bil" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱图像/合成大数据/c350bil.hdr" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱图像/合成大数据/c350bip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱图像/合成大数据/c350bip.enp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱图像/合成大数据/c350bip.hdr" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱图像/合成大数据/c350bip_128" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱图像/合成大数据/c350bip_128.hdr" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱图像/合成大数据/c350bip_16" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱图像/合成大数据/c350bip_16.hdr" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱图像/合成大数据/c350bip_2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱图像/合成大数据/c350bip_2.hdr" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱图像/合成大数据/c350bip_256" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱图像/合成大数据/c350bip_256.hdr" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱图像/合成大数据/c350bip_32" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱图像/合成大数据/c350bip_32.hdr" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱图像/合成大数据/c350bip_4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱图像/合成大数据/c350bip_4.hdr" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱图像/合成大数据/c350bip_512" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱图像/合成大数据/c350bip_512.hdr" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱图像/合成大数据/c350bip_64" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱图像/合成大数据/c350bip_64.hdr" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱图像/合成大数据/c350bip_8" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱图像/合成大数据/c350bip_8.hdr" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱图像/合成大数据/datalib_without_noise.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱图像/合成大数据/demo" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱图像/合成大数据/demo.hdr" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱图像/合成大数据/drchrnd.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱图像/合成大数据/gaussian" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱图像/合成大数据/gaussian.hdr" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱图像/合成大数据/getendmember.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱图像/合成大数据/pan/1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱图像/合成大数据/pan/2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱图像/合成大数据/pan/3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱图像/合成大数据/pan/A1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱图像/合成大数据/pan/A2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱图像/合成大数据/pan/A3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱图像/合成大数据/pan/NFINDRdemo.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱图像/合成大数据/pan/NMFdemo.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱图像/合成大数据/pan/Noise_LHNMF.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱图像/合成大数据/pan/PCA.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱图像/合成大数据/pan/PPIdemo.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱图像/合成大数据/pan/c350.tif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱图像/合成大数据/pan/hyperMNF.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱图像/合成大数据/pan/hyperPPI.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱图像/合成大数据/pan/linearMax.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱图像/合成大数据/pan/nfindr.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱图像/合成大数据/pan/original.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱图像/合成大数据/pan/proportion1.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱图像/合成大数据/pan/proportion2.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱图像/合成大数据/pan/proportion3.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱图像/合成大数据/pan/sad1.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱图像/合成大数据/pan/test.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱图像/合成大数据/pan/untitled.fig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱图像/合成大数据/pan/untitled.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱图像/合成大数据/samson_1.img" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱图像/合成大数据/samson_1.img.hdr" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱图像/合成大数据/samson_2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱图像/合成大数据/samson_2.hdr" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱图像/合成大数据/samson_2.sta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱图像/合成大数据/show.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱图像/合成大数据/sy.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱图像/大米光谱数据/test1/T30-550-10-850-2019-04-30-17-09-38/1.tif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱图像/大米光谱数据/test1/T30-550-10-850-2019-04-30-17-09-38/10.tif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱图像/大米光谱数据/test1/T30-550-10-850-2019-04-30-17-09-38/11.tif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱图像/大米光谱数据/test1/T30-550-10-850-2019-04-30-17-09-38/12.tif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱图像/大米光谱数据/test1/T30-550-10-850-2019-04-30-17-09-38/1224.tif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱图像/大米光谱数据/test1/T30-550-10-850-2019-04-30-17-09-38/13.tif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱图像/大米光谱数据/test1/T30-550-10-850-2019-04-30-17-09-38/14.tif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱图像/大米光谱数据/test1/T30-550-10-850-2019-04-30-17-09-38/15.tif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱图像/大米光谱数据/test1/T30-550-10-850-2019-04-30-17-09-38/16.tif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱图像/大米光谱数据/test1/T30-550-10-850-2019-04-30-17-09-38/17.tif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱图像/大米光谱数据/test1/T30-550-10-850-2019-04-30-17-09-38/18.tif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱图像/大米光谱数据/test1/T30-550-10-850-2019-04-30-17-09-38/19.tif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱图像/大米光谱数据/test1/T30-550-10-850-2019-04-30-17-09-38/2.tif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱图像/大米光谱数据/test1/T30-550-10-850-2019-04-30-17-09-38/20.tif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱图像/大米光谱数据/test1/T30-550-10-850-2019-04-30-17-09-38/21.tif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱图像/大米光谱数据/test1/T30-550-10-850-2019-04-30-17-09-38/22.tif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱图像/大米光谱数据/test1/T30-550-10-850-2019-04-30-17-09-38/23.tif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱图像/大米光谱数据/test1/T30-550-10-850-2019-04-30-17-09-38/24.tif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱图像/大米光谱数据/test1/T30-550-10-850-2019-04-30-17-09-38/25.tif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱图像/大米光谱数据/test1/T30-550-10-850-2019-04-30-17-09-38/26.tif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱图像/大米光谱数据/test1/T30-550-10-850-2019-04-30-17-09-38/27.tif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱图像/大米光谱数据/test1/T30-550-10-850-2019-04-30-17-09-38/28.tif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱图像/大米光谱数据/test1/T30-550-10-850-2019-04-30-17-09-38/29.tif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱图像/大米光谱数据/test1/T30-550-10-850-2019-04-30-17-09-38/3.tif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱图像/大米光谱数据/test1/T30-550-10-850-2019-04-30-17-09-38/30.tif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱图像/大米光谱数据/test1/T30-550-10-850-2019-04-30-17-09-38/31.tif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱图像/大米光谱数据/test1/T30-550-10-850-2019-04-30-17-09-38/4.tif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱图像/大米光谱数据/test1/T30-550-10-850-2019-04-30-17-09-38/5.tif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱图像/大米光谱数据/test1/T30-550-10-850-2019-04-30-17-09-38/6.tif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱图像/大米光谱数据/test1/T30-550-10-850-2019-04-30-17-09-38/7.tif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱图像/大米光谱数据/test1/T30-550-10-850-2019-04-30-17-09-38/8.tif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱图像/大米光谱数据/test1/T30-550-10-850-2019-04-30-17-09-38/9.tif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱图像/大米光谱数据/test1/T30-550-10-850-2019-04-30-17-09-38/T17-09-38.hdr" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱图像/大米光谱数据/test1/T30-550-10-850-2019-04-30-17-09-38/T17-09-38.img" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱图像/大米光谱数据/test1/T30-550-10-850-2019-04-30-17-09-38/T17-09-38.img.enp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱图像/大米光谱数据/test1/T30-550-10-850-2019-04-30-17-09-38/T17-09-38_R.hdr" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱图像/大米光谱数据/test1/T30-550-10-850-2019-04-30-17-09-38/T17-09-38_R.img" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱图像/大米光谱数据/test1/T30-550-10-850-2019-04-30-17-09-38/index.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱图像/大米光谱数据/test1/T30-550-10-850-2019-04-30-17-15-45/T17-15-45.hdr" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱图像/大米光谱数据/test1/T30-550-10-850-2019-04-30-17-15-45/T17-15-45.img" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱图像/大米光谱数据/test1/T30-550-10-850-2019-04-30-17-15-45/T17-15-45_R.hdr" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱图像/大米光谱数据/test1/T30-550-10-850-2019-04-30-17-15-45/T17-15-45_R.img" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱图像/大米光谱数据/test1/T30-550-10-850-2019-04-30-17-16-04/T17-16-04.hdr" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱图像/大米光谱数据/test1/T30-550-10-850-2019-04-30-17-16-04/T17-16-04.img" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱图像/大米光谱数据/test1/T30-550-10-850-2019-04-30-17-16-04/T17-16-04_R.hdr" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱图像/大米光谱数据/test1/T30-550-10-850-2019-04-30-17-16-04/T17-16-04_R.img" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱图像/大米光谱数据/test1/T30-550-10-850-2019-04-30-17-16-18/1.tif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱图像/大米光谱数据/test1/T30-550-10-850-2019-04-30-17-16-18/10.tif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱图像/大米光谱数据/test1/T30-550-10-850-2019-04-30-17-16-18/11.tif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱图像/大米光谱数据/test1/T30-550-10-850-2019-04-30-17-16-18/12.tif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱图像/大米光谱数据/test1/T30-550-10-850-2019-04-30-17-16-18/13.tif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱图像/大米光谱数据/test1/T30-550-10-850-2019-04-30-17-16-18/14.tif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱图像/大米光谱数据/test1/T30-550-10-850-2019-04-30-17-16-18/15.tif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱图像/大米光谱数据/test1/T30-550-10-850-2019-04-30-17-16-18/16.tif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱图像/大米光谱数据/test1/T30-550-10-850-2019-04-30-17-16-18/17.tif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱图像/大米光谱数据/test1/T30-550-10-850-2019-04-30-17-16-18/18.tif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱图像/大米光谱数据/test1/T30-550-10-850-2019-04-30-17-16-18/19.tif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱图像/大米光谱数据/test1/T30-550-10-850-2019-04-30-17-16-18/2.tif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱图像/大米光谱数据/test1/T30-550-10-850-2019-04-30-17-16-18/20.tif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱图像/大米光谱数据/test1/T30-550-10-850-2019-04-30-17-16-18/21.tif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱图像/大米光谱数据/test1/T30-550-10-850-2019-04-30-17-16-18/22.tif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱图像/大米光谱数据/test1/T30-550-10-850-2019-04-30-17-16-18/23.tif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱图像/大米光谱数据/test1/T30-550-10-850-2019-04-30-17-16-18/24.tif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱图像/大米光谱数据/test1/T30-550-10-850-2019-04-30-17-16-18/25.tif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱图像/大米光谱数据/test1/T30-550-10-850-2019-04-30-17-16-18/26.tif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱图像/大米光谱数据/test1/T30-550-10-850-2019-04-30-17-16-18/27.tif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱图像/大米光谱数据/test1/T30-550-10-850-2019-04-30-17-16-18/28.tif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱图像/大米光谱数据/test1/T30-550-10-850-2019-04-30-17-16-18/29.tif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱图像/大米光谱数据/test1/T30-550-10-850-2019-04-30-17-16-18/3.tif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱图像/大米光谱数据/test1/T30-550-10-850-2019-04-30-17-16-18/30.tif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱图像/大米光谱数据/test1/T30-550-10-850-2019-04-30-17-16-18/31.tif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱图像/大米光谱数据/test1/T30-550-10-850-2019-04-30-17-16-18/4.tif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱图像/大米光谱数据/test1/T30-550-10-850-2019-04-30-17-16-18/5.tif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱图像/大米光谱数据/test1/T30-550-10-850-2019-04-30-17-16-18/6.tif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱图像/大米光谱数据/test1/T30-550-10-850-2019-04-30-17-16-18/7.tif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱图像/大米光谱数据/test1/T30-550-10-850-2019-04-30-17-16-18/8.tif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱图像/大米光谱数据/test1/T30-550-10-850-2019-04-30-17-16-18/9.tif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱图像/大米光谱数据/test1/T30-550-10-850-2019-04-30-17-16-18/T17-16-18.hdr" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱图像/大米光谱数据/test1/T30-550-10-850-2019-04-30-17-16-18/T17-16-18.img" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱图像/大米光谱数据/test1/T30-550-10-850-2019-04-30-17-16-18/T17-16-18.img.enp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱图像/大米光谱数据/test1/T30-550-10-850-2019-04-30-17-16-18/T17-16-18_R.hdr" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱图像/大米光谱数据/test1/T30-550-10-850-2019-04-30-17-16-18/T17-16-18_R.img" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱图像/大米光谱数据/test1/T30-550-10-850-2019-04-30-17-16-18/index.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱图像/大米光谱数据/test1/W30-550-10-850-2019-04-30-17-09-06/W17-09-06.hdr" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱图像/大米光谱数据/test1/W30-550-10-850-2019-04-30-17-09-06/W17-09-06.img" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱图像/大米光谱数据/test1/大米光谱.bmp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱图像/大米光谱数据/test1/大米反射率.bmp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱图像/大米光谱数据/test1/说明.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱库/usgs_min/usgs_min.hdr" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱库/usgs_min/usgs_min.sli" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱库/usgs_min2/usgs_min.hdr" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/数据/高光谱库/usgs_min2/usgs_min.sli" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/毕业论文/大论文谷金平-改3.doc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/毕业论文/硕士毕业论文李生富（12-25）.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/毕业论文/臧其涛_面向遥感大数据的多目标任务调度_答辩后改.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/毕业论文/计算机科学与工程学院-113106000685-李永龙-吴泽彬-final-2.doc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/源码/hsicloud/hsicloud_backend" beforeDir="false" afterPath="$PROJECT_DIR$/../../../科研/云计算/源码/hsicloud/hsicloud_backend" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/源码/hsicloud/hsicloud_frontend" beforeDir="false" afterPath="$PROJECT_DIR$/../../../科研/云计算/源码/hsicloud/hsicloud_frontend" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/虚拟机/master/master.vmdk" beforeDir="false" afterPath="$PROJECT_DIR$/../../../科研/云计算/虚拟机/master/master.vmdk" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/虚拟机/master/master.vmx" beforeDir="false" afterPath="$PROJECT_DIR$/../../../科研/云计算/虚拟机/master/master.vmx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/虚拟机/master/vmware-0.log" beforeDir="false" afterPath="$PROJECT_DIR$/../../../科研/云计算/虚拟机/master/vmware-0.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/虚拟机/master/vmware-1.log" beforeDir="false" afterPath="$PROJECT_DIR$/../../../科研/云计算/虚拟机/master/vmware-1.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/虚拟机/master/vmware-2.log" beforeDir="false" afterPath="$PROJECT_DIR$/../../../科研/云计算/虚拟机/master/vmware-2.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../科研/云计算/虚拟机/master/vmware.log" beforeDir="false" afterPath="$PROJECT_DIR$/../../../科研/云计算/虚拟机/master/vmware.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../竞赛/大规模遥感数据云服务平台-计算机学院“互联网+”大赛2019年报送材料/计算机学院-主赛道（创意组）/计算机-推荐序号-大规模遥感数据云服务平台/学院简称-推荐序号-大规模遥感数据云服务平台（商业计划书）.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../竞赛/大规模遥感数据云服务平台-计算机学院“互联网+”大赛2019年报送材料/计算机学院-主赛道（创意组）/计算机-推荐序号-大规模遥感数据云服务平台/学院简称-推荐序号-大规模遥感数据处理云平台.pptx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../竞赛/大规模遥感数据云服务平台-计算机学院“互联网+”大赛2019年报送材料/计算机学院-主赛道（创意组）/计算机-推荐序号-大规模遥感数据云服务平台/学院简称-推荐序号-大规模遥感数据处理云平台（参赛报名表）.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../课程/318106020161-郑鹏-模式识别理论课程考试/ldl_scl" beforeDir="false" afterPath="$PROJECT_DIR$/../../../课程/318106020161-郑鹏-模式识别理论课程考试/ldl_scl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../课程/郑翔_归档文件/代码归档/ldl_scl" beforeDir="false" afterPath="$PROJECT_DIR$/../../../课程/郑翔_归档文件/代码归档/ldl_scl" afterDir="false" />
+    </list>
+    <ignored path="$PROJECT_DIR$/out/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeStyleSettingsInfer">
+    <option name="done" value="true" />
+  </component>
+  <component name="Commander">
+    <leftPanel />
+    <rightPanel />
+    <splitter proportion="0.5" />
+  </component>
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/PPI$Extraction.coverage" NAME="Extraction Coverage Results" MODIFIED="1476846913408" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>jingle.ppi.*</FILTER>
+    </SUITE>
+  </component>
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="DefaultGradleProjectSettings">
+    <option name="isMigrated" value="true" />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="PPI" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/njust/chain/index.scala">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="600">
+              <caret line="28" column="26" lean-forward="true" selection-start-line="28" selection-start-column="26" selection-end-line="28" selection-end-column="26" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Scala Object" />
+        <option value="Scala Class" />
+        <option value="Package Object" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="1" />
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-8" />
+    <option name="width" value="2575" />
+    <option name="height" value="1408" />
+  </component>
+  <component name="ProjectId" id="1avyGAlJf6nWU1GvmA8QKT6K4SY" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="PackagesPane" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="PPI" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Spark_PPI" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="PPI" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Spark_PPI" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="PPI" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Spark_PPI" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="njust" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="PPI" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Spark_PPI" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="njust" type="462c0819:PsiDirectoryNode" />
+              <item name="chain" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="Downloaded.Files.Path.Enabled" value="false" />
+    <property name="GenerateAntBuildDialog.backupFiles" value="true" />
+    <property name="GenerateAntBuildDialog.enableUiFormCompile" value="true" />
+    <property name="GenerateAntBuildDialog.forceTargetJdk" value="true" />
+    <property name="GenerateAntBuildDialog.outputFileNameProperty" value="ppi" />
+    <property name="Repository.Attach.Annotations" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1603004444225" />
+    <property name="dynamic.classpath" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="options.lastSelected" value="editor.preferences.appearance" />
+    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.splitter.main.proportions" value="0.3" />
+    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="recentsLimit" value="5" />
+    <property name="restartRequiresConfirmation" value="false" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/njust/tools" />
+      <recent name="$PROJECT_DIR$/src/njust/ppi" />
+      <recent name="$PROJECT_DIR$/src/jingle/ppi" />
+      <recent name="$PROJECT_DIR$/src" />
+      <recent name="H:\jingle\Project\PPI" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="njust.chain" />
+      <recent name="njust.ppi" />
+      <recent name="jingle.ppi" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/src/jingle/ppi" />
+      <recent name="H:\jingle\Project\PPI\src\jingle\ppi" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Application.index">
+    <configuration default="true" type="JUnitTestDiscovery" factoryName="JUnit Test Discovery" changeList="All">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="true" type="TestNGTestDiscovery" factoryName="TestNG Test Discovery" changeList="All">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="ANNOTATION_TYPE" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <envs />
+      <properties />
+      <listeners />
+      <method />
+    </configuration>
+    <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android App">
+      <module name="" />
+      <option name="DEPLOY" value="true" />
+      <option name="ARTIFACT_NAME" value="" />
+      <option name="PM_INSTALL_OPTIONS" value="" />
+      <option name="ACTIVITY_EXTRA_FLAGS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
+      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
+      <option name="FORCE_STOP_RUNNING_APP" value="true" />
+      <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
+      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="DEBUGGER_TYPE" value="Java" />
+      <Java />
+      <Profilers>
+        <option name="ADVANCED_PROFILING_ENABLED" value="false" />
+      </Profilers>
+      <option name="DEEP_LINK" value="" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Instrumented Tests">
+      <module name="" />
+      <option name="TESTING_TYPE" value="0" />
+      <option name="INSTRUMENTATION_RUNNER_CLASS" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="EXTRA_OPTIONS" value="" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
+      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
+      <option name="FORCE_STOP_RUNNING_APP" value="true" />
+      <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
+      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="DEBUGGER_TYPE" value="Java" />
+      <Java />
+      <Profilers>
+        <option name="ADVANCED_PROFILING_ENABLED" value="false" />
+      </Profilers>
+      <method v="2">
+        <option name="Make" enabled="true" />
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="Applet">
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Extraction" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="njust.ppi.Extraction" />
+      <module name="Spark_PPI" />
+      <option name="PROGRAM_PARAMETERS" value="c350bip_4 localhost hdfs://localhost:9000/ 1000" />
+      <option name="VM_PARAMETERS" value="-Xms2g -Xmx2g" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="njust.ppi.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <RunnerSettings RunnerId="Cover" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="" />
+        <option name="TRANSPORT" value="0" />
+        <option name="LOCAL" value="true" />
+      </RunnerSettings>
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Cover" />
+      <ConfigurationWrapper RunnerId="Debug" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="index" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="njust.chain.index" />
+      <module name="Spark_PPI" />
+      <option name="PROGRAM_PARAMETERS" value="http://192.168.1.100:8082 41  hdfs://192.168.1.107:9000 jdbc:mysql://localhost:3306/hsicloud" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="njust.chain.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="main (1)" type="Application" factoryName="Application" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="njust.scls.main" />
+      <module name="Spark_PPI" />
+      <option name="PROGRAM_PARAMETERS" value="gaussian  hdfs://192.168.1.108:9000/ slcs local[4]" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="njust.scls.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="main" type="Application" factoryName="Application" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="njust.single.main" />
+      <module name="Spark_PPI" />
+      <option name="VM_PARAMETERS" value="-Xms2g -Xmx2g" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="njust.single.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="test (1)" type="Application" factoryName="Application" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="njust.test" />
+      <module name="Spark_PPI" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="njust.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <option name="TEST_OBJECT" value="class" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Spark_PPI.jar" type="JarApplication" factoryName="JAR Application" temporary="true">
+      <option name="JAR_PATH" value="$PROJECT_DIR$/out/artifacts/Spark_PPI_jar/Spark_PPI.jar" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="TestNG">
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType">
+      <module name="" />
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
+      <option name="PROGRAM_PARAMETERS" />
+      <predefined_log_file enabled="true" id="idea.log" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.Extraction" />
+      <item itemvalue="Application.index" />
+      <item itemvalue="Application.main" />
+      <item itemvalue="Application.test (1)" />
+      <item itemvalue="Application.main (1)" />
+      <item itemvalue="JAR Application.Spark_PPI.jar" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.main (1)" />
+        <item itemvalue="JAR Application.Spark_PPI.jar" />
+        <item itemvalue="Application.main" />
+        <item itemvalue="Application.test (1)" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="de59fcf4-281f-411a-991f-9168e164832a" name="Default" comment="" />
+      <created>1433858277002</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1433858277002</updated>
+      <workItem from="1433858300894" duration="3196000" />
+      <workItem from="1433898935897" duration="16601000" />
+      <workItem from="1433990748523" duration="4677000" />
+      <workItem from="1434078015503" duration="711000" />
+      <workItem from="1434079861623" duration="63000" />
+      <workItem from="1434079973299" duration="6802000" />
+      <workItem from="1434417964835" duration="4082000" />
+      <workItem from="1434440388875" duration="2000" />
+      <workItem from="1434440519478" duration="1295000" />
+      <workItem from="1434454709239" duration="22606000" />
+      <workItem from="1434530517298" duration="10722000" />
+      <workItem from="1476781129397" duration="1007000" />
+      <workItem from="1476782159163" duration="582000" />
+      <workItem from="1476783030631" duration="854000" />
+      <workItem from="1476785598138" duration="314000" />
+      <workItem from="1476789668672" duration="1483000" />
+      <workItem from="1476795631698" duration="17424000" />
+      <workItem from="1476862099003" duration="621000" />
+      <workItem from="1476864367378" duration="4491000" />
+      <workItem from="1476886878799" duration="2165000" />
+      <workItem from="1476927157650" duration="24430000" />
+      <workItem from="1477102392304" duration="32511000" />
+      <workItem from="1477272993595" duration="596000" />
+      <workItem from="1480725739124" duration="548000" />
+      <workItem from="1559102651150" duration="9592000" />
+      <workItem from="1559219978276" duration="7049000" />
+      <workItem from="1560330166866" duration="4085000" />
+      <workItem from="1563266635261" duration="28000" />
+      <workItem from="1587630266708" duration="5675000" />
+      <workItem from="1587698698164" duration="25000" />
+      <workItem from="1587698787385" duration="158052000" />
+      <workItem from="1589325880673" duration="34117000" />
+      <workItem from="1589503704152" duration="12470000" />
+      <workItem from="1589694804449" duration="18145000" />
+      <workItem from="1590034282313" duration="15260000" />
+      <workItem from="1590649842980" duration="70204000" />
+      <workItem from="1591167877743" duration="2877000" />
+      <workItem from="1591704119799" duration="687000" />
+      <workItem from="1591750572307" duration="7834000" />
+      <workItem from="1591779536045" duration="85557000" />
+      <workItem from="1592608999402" duration="19487000" />
+      <workItem from="1592894154386" duration="42532000" />
+      <workItem from="1596465796950" duration="3577000" />
+      <workItem from="1603004446038" duration="1597000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="1597000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-7" y="-7" width="2062" height="1126" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Image Layers" />
+      <window_info id="Designer" />
+      <window_info id="UI Designer" />
+      <window_info id="Capture Tool" />
+      <window_info id="Favorites" side_tool="true" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24974924" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" />
+      <window_info anchor="bottom" id="Version Control" />
+      <window_info anchor="bottom" id="Terminal" />
+      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="right" id="Palette" />
+      <window_info anchor="right" id="Theme Preview" />
+      <window_info anchor="right" id="Maven" />
+      <window_info anchor="right" id="Capture Analysis" />
+      <window_info anchor="right" id="Palette&#9;" />
+      <window_info anchor="right" id="Database" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.UiProperties">
+    <option name="RECENTLY_FILTERED_USER_GROUPS">
+      <collection />
+    </option>
+    <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+      <collection />
+    </option>
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="729" y="356" width="524" height="482" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog" timestamp="1592617562689">
+      <screen x="65" y="24" width="1855" height="1176" />
+    </state>
+    <state x="729" y="356" width="524" height="482" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog/65.24.1855.1176@65.24.1855.1176" timestamp="1592617562689" />
+    <state x="172" y="123" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1596466424214">
+      <screen x="65" y="24" width="1855" height="1176" />
+    </state>
+    <state x="172" y="123" key="#com.intellij.execution.impl.EditConfigurationsDialog/65.24.1855.1176@65.24.1855.1176" timestamp="1596466424214" />
+    <state x="805" y="286" key="#com.intellij.ide.util.MemberChooser" timestamp="1591858882933">
+      <screen x="65" y="24" width="1855" height="1176" />
+    </state>
+    <state x="805" y="286" key="#com.intellij.ide.util.MemberChooser/65.24.1855.1176@65.24.1855.1176" timestamp="1591858882933" />
+    <state x="730" y="385" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1593502607483">
+      <screen x="65" y="24" width="1855" height="1176" />
+    </state>
+    <state x="730" y="385" key="#com.intellij.ide.util.TreeClassChooserDialog/65.24.1855.1176@65.24.1855.1176" timestamp="1593502607483" />
+    <state x="750" y="486" width="484" height="295" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1589287212488">
+      <screen x="65" y="24" width="1855" height="1176" />
+    </state>
+    <state x="750" y="486" width="484" height="295" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/65.24.1855.1176@65.24.1855.1176" timestamp="1589287212488" />
+    <state width="515" height="568" key="DebuggerActiveHint" timestamp="1592449294208">
+      <screen x="65" y="24" width="1855" height="1176" />
+    </state>
+    <state width="515" height="568" key="DebuggerActiveHint/65.24.1855.1176@65.24.1855.1176" timestamp="1592449294208" />
+    <state x="624" y="343" key="FileChooserDialogImpl" timestamp="1591787197459">
+      <screen x="65" y="24" width="1855" height="1176" />
+    </state>
+    <state x="624" y="343" key="FileChooserDialogImpl/65.24.1855.1176@65.24.1855.1176" timestamp="1591787197459" />
+    <state width="1809" height="358" key="GridCell.Tab.0.bottom" timestamp="1596466429367">
+      <screen x="65" y="24" width="1855" height="1176" />
+    </state>
+    <state width="1809" height="358" key="GridCell.Tab.0.bottom/65.24.1855.1176@65.24.1855.1176" timestamp="1596466429367" />
+    <state width="1809" height="358" key="GridCell.Tab.0.center" timestamp="1596466429366">
+      <screen x="65" y="24" width="1855" height="1176" />
+    </state>
+    <state width="1809" height="358" key="GridCell.Tab.0.center/65.24.1855.1176@65.24.1855.1176" timestamp="1596466429366" />
+    <state width="1809" height="358" key="GridCell.Tab.0.left" timestamp="1596466429366">
+      <screen x="65" y="24" width="1855" height="1176" />
+    </state>
+    <state width="1809" height="358" key="GridCell.Tab.0.left/65.24.1855.1176@65.24.1855.1176" timestamp="1596466429366" />
+    <state width="1809" height="358" key="GridCell.Tab.0.right" timestamp="1596466429367">
+      <screen x="65" y="24" width="1855" height="1176" />
+    </state>
+    <state width="1809" height="358" key="GridCell.Tab.0.right/65.24.1855.1176@65.24.1855.1176" timestamp="1596466429367" />
+    <state width="1809" height="358" key="GridCell.Tab.1.bottom" timestamp="1596466429232">
+      <screen x="65" y="24" width="1855" height="1176" />
+    </state>
+    <state width="1809" height="358" key="GridCell.Tab.1.bottom/65.24.1855.1176@65.24.1855.1176" timestamp="1596466429232" />
+    <state width="1809" height="358" key="GridCell.Tab.1.center" timestamp="1596466429231">
+      <screen x="65" y="24" width="1855" height="1176" />
+    </state>
+    <state width="1809" height="358" key="GridCell.Tab.1.center/65.24.1855.1176@65.24.1855.1176" timestamp="1596466429231" />
+    <state width="1809" height="358" key="GridCell.Tab.1.left" timestamp="1596466429230">
+      <screen x="65" y="24" width="1855" height="1176" />
+    </state>
+    <state width="1809" height="358" key="GridCell.Tab.1.left/65.24.1855.1176@65.24.1855.1176" timestamp="1596466429230" />
+    <state width="1809" height="358" key="GridCell.Tab.1.right" timestamp="1596466429231">
+      <screen x="65" y="24" width="1855" height="1176" />
+    </state>
+    <state width="1809" height="358" key="GridCell.Tab.1.right/65.24.1855.1176@65.24.1855.1176" timestamp="1596466429231" />
+    <state x="480" y="177" width="1024" height="843" key="SettingsEditor" timestamp="1593502625398">
+      <screen x="65" y="24" width="1855" height="1176" />
+    </state>
+    <state x="480" y="177" width="1024" height="843" key="SettingsEditor/65.24.1855.1176@65.24.1855.1176" timestamp="1593502625398" />
+    <state x="669" y="495" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1591796072397">
+      <screen x="65" y="24" width="1855" height="1176" />
+    </state>
+    <state x="669" y="495" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/65.24.1855.1176@65.24.1855.1176" timestamp="1591796072397" />
+    <state x="655" y="276" key="run.anything.popup" timestamp="1590715026909">
+      <screen x="65" y="24" width="1855" height="1176" />
+    </state>
+    <state x="655" y="276" key="run.anything.popup/65.24.1855.1176@65.24.1855.1176" timestamp="1590715026909" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="scala-line">
+          <url>file://$PROJECT_DIR$/src/njust/single/main.scala</url>
+          <line>29</line>
+          <properties />
+          <option name="timeStamp" value="88" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="scala-line">
+          <url>file://$PROJECT_DIR$/src/njust/test.scala</url>
+          <line>7</line>
+          <properties />
+          <option name="timeStamp" value="98" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="scala-line">
+          <url>file://$PROJECT_DIR$/src/njust/scls/main.scala</url>
+          <line>9</line>
+          <properties />
+          <option name="timeStamp" value="139" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+    <watches-manager>
+      <configuration name="Application">
+        <watch expression="pair" language="Scala" />
+        <watch expression="ratios(0,0)" language="Scala" />
+        <watch expression="JsonParser(map)" language="Scala" />
+        <watch expression="insertJSON.toString" language="Scala" />
+      </configuration>
+    </watches-manager>
+  </component>
+  <component name="antWorkspaceConfiguration">
+    <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
+    <option name="FILTER_TARGETS" value="false" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/njust/chain/index.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="600">
+          <caret line="28" column="26" lean-forward="true" selection-start-line="28" selection-start-column="26" selection-end-line="28" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

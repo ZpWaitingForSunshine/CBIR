@@ -1,13 +1,10 @@
 package com.njust.hsicloud.web.controller;
 
-import com.njust.hsicloud.core.util.HDFSOperation;
 import com.njust.hsicloud.core.util.HDFSUtil;
-import com.njust.hsicloud.core.util.InputStreamReaderRunnable;
+import com.njust.hsicloud.core.util.upload.HDFSOperation;
 import com.njust.hsicloud.web.model.Envi;
 import com.njust.hsicloud.web.service.ImageService;
-import org.apache.spark.SparkConf;
 import org.apache.spark.deploy.SparkSubmit;
-import org.apache.spark.launcher.SparkLauncher;
 import org.springframework.core.io.FileSystemResource;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
@@ -24,55 +21,13 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
-import ch.ethz.ssh2.Connection;
-import com.alibaba.fastjson.JSON;
-import com.njust.hsicloud.core.assist.runc.RemoteShellTool;
-import com.njust.hsicloud.web.model.JobSubmitRequest;
-import net.sf.json.JSONArray;
-import net.sf.json.JSONObject;
-import org.apache.http.client.methods.CloseableHttpResponse;
-import org.apache.http.client.methods.HttpGet;
-import org.apache.http.client.methods.HttpPost;
-import org.apache.http.entity.StringEntity;
-import org.apache.http.impl.client.CloseableHttpClient;
-import org.apache.http.impl.client.HttpClientBuilder;
-import org.apache.http.impl.client.HttpClients;
-import org.apache.http.util.EntityUtils;
-import org.apache.spark.SparkConf;
-import org.apache.spark.SparkContext;
-import org.apache.spark.deploy.SparkSubmit;
-import org.apache.spark.launcher.SparkAppHandle;
-import org.apache.spark.launcher.SparkLauncher;
-import org.apache.spark.scheduler.SparkListener;
-import org.dom4j.Document;
-import org.dom4j.Element;
-import org.dom4j.io.SAXReader;
-import org.omg.CORBA.Request;
-import org.springframework.web.bind.annotation.RequestParam;
-import sun.net.www.http.HttpClient;
-
-import javax.net.ssl.SSLEngine;
-import javax.servlet.http.HttpServletRequest;
-import javax.xml.ws.Response;
-import java.io.*;
-import java.util.*;
-import org.apache.spark.SparkConf;
-import org.apache.spark.deploy.rest.CreateSubmissionResponse;
-import org.apache.spark.deploy.rest.RestSubmissionClient;
-import org.apache.spark.deploy.rest.SubmissionStatusResponse;
-
-import java.util.concurrent.CountDownLatch;
 
 import javax.servlet.http.HttpServletRequest;
+
 import javax.annotation.Resource;
-import javax.servlet.http.HttpServletRequest;
 import java.io.File;
 import java.io.IOException;
-import java.util.Date;
-import java.util.HashMap;
 import java.util.UUID;
-
-import static javafx.scene.input.KeyCode.R;
 
 @Controller
 @RequestMapping(value = "/upload")

@@ -137,50 +137,6 @@ export const constantRoutes = [
     ]
   },
 
-
-  // {
-  //   path: '/repository',
-  //   component: Layout,
-  //   name: 'Repository',
-  //   redirect: '/repository/HSIs Repository/pic_list',
-  //   meta: {
-  //     title: '资源库',
-  //     icon: 'excel'
-  //   },
-  //   children: [
-  //     {
-  //       path: 'HSIs Repository',
-  //       component: () => import('@/views/repository/HSIs Repository/pic_list'),
-  //       name: 'HSIs Repository',
-  //       meta: { title: '图像库', icon: 'list' }
-  //     },
-  //     {
-  //       path: 'List Details',
-  //       component: () => import('@/views/repository/List Details/list_details'),
-  //       name: 'List Details',
-  //       meta: { title: 'Details', icon: 's-order' },
-  //       hidden: true
-  //     },
-  //     {
-  //       path: 'Spectral Library',
-  //       component: () => import('@/views/repository/Spectral Library/index'),
-  //       name: 'Spectral Library',
-  //       meta: { title: '光谱库', icon: 'tree-table' }
-  //     },
-  //     {
-  //       path: 'Upload',
-  //       component: () => import('@/views/repository/upload/index'),
-  //       name: 'Upload',
-  //       meta: { title: '上传', icon: 'guide' }
-  //     },
-  //     {
-  //       path: 'Unmixing',
-  //       component: () => import('@/views/repository/upload/unmixing'),
-  //       name: 'Unmixing',
-  //       meta: { title: '解混', icon: 'guide' }
-  //     }
-  //   ]
-  // },
   {
     path: '/retrieval',
     component: Layout,
@@ -190,16 +146,16 @@ export const constantRoutes = [
     },
     children: [
       {
-        path: 'image',
-        component: () => import('@/views/repository/retrieval/image'),
-        name: 'Image',
-        meta: { title: 'Advanced Retrieval', icon: 'search' }
-      }, {
         path: 'spectral',
         component: () => import('@/views/repository/retrieval/spectral'),
         name: 'Spectral',
         meta: { title: 'Normal Retrieval', icon: 'search' }
-      }
+      }, {
+        path: 'image',
+        component: () => import('@/views/repository/retrieval/image'),
+        name: 'Image',
+        meta: { title: 'Advanced Retrieval', icon: 'search' }
+      },
     ]
   }
 ]

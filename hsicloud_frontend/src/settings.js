@@ -1,8 +1,8 @@
 module.exports = {
-  title: '遥感大数据云服务平台',
+  title: 'CBIR',
 
-  hdfsurl:"192.168.1.107",
-  server:"192.168.56.1",
+  hdfsurl: "192.168.1.107",
+  server: "192.168.56.1",
 
   /**
    * @type {boolean} true | false

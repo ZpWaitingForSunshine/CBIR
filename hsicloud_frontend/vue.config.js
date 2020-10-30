@@ -31,17 +31,8 @@ module.exports = {
       errors: true
     },
     proxy: {
-      // change xxx-api/login => mock/login
-      // detail: https://cli.vuejs.org/config/#devserver-proxy
-      // [process.env.VUE_APP_BASE_API]: {
-      //   target: `http://localhost:${port}/mock`,
-      //   changeOrigin: true,
-      //   pathRewrite: {
-      //     ['^' + process.env.VUE_APP_BASE_API]: ''
-      //   }
-      // }
       '/rest': {
-        target: `http://localhost:8082/`,
+        target: `http://10.10.10.110:8081/`,
         changeOrigin: true,
         pathRewrite: {
           '^/': ''
@@ -49,14 +40,14 @@ module.exports = {
       },
       '/': {
         ws: false,
-        target: `http://localhost:8082/`,
+        target: `http://10.10.10.110:8081/`,
         changeOrigin: true,
         pathRewrite: {
           '^/': ''
         }
       },
       '/spark': {
-        target: `http://master:8080`,
+        target: `http://10.10.10.110:8081`,
         changeOrigin: true,
         pathRewrite: {
           '^/spark': ''
