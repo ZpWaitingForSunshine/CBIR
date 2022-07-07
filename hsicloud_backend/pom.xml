@@ -106,7 +106,7 @@
         <springfox-swagger.version>2.8.0</springfox-swagger.version>
         <swagger-bootstrap-ui.version>1.7.2</swagger-bootstrap-ui.version>
 <!--        <netty.version> 3.6.2.Final</netty.version>-->
-        <hibernate.validator.version>5.1.1.Final</hibernate.validator.version>
+        <hibernate.validator.version>6.0.23.Final</hibernate.validator.version>
     </properties>
 
 
